@@ -1,0 +1,295 @@
+[
+  {
+    "ref": "ce675f74-2a47-45e1-afd7-68997a4419c9",
+    "keyword": "5ce2d488f71cb93292a86837b2dae6bc",
+    "answer": "Hola",
+    "options": {},
+    "from": "50672718761",
+    "refSerialize": "c22e4066d61d81721def9b25d8a397e8"
+  },
+  {
+    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
+    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "answer": "*🤖IcoBot🤖*",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "child": null,
+      "delay": 1,
+      "idle": null,
+      "ref": null,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "from": "50672718761"
+  },
+  {
+    "ref": "fdea9c9b-871f-4831-af9c-aaaf7018c4a3",
+    "keyword": null,
+    "answer": "¡Hola! Somos ICOTEC, un instituto que se dedica a la educación técnica y cursos libres de gran calidad a bajo costo, con más de 20 años en el mercado costarricense. Estamos afiliados a CANAEP (Cámara Nacional de Educación Privada) y al INA (Inglés).\r\n",
+    "options": {
+      "media": "C:\\Users\\jonas\\Escritorio\\IcoBot\\imagenes\\saludo.jpg",
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "50672718761",
+    "refSerialize": "f7b58515dec06654a4a992765db4a96e"
+  },
+  {
+    "ref": "ac9d5672-8800-49bb-9485-4aa35b823376",
+    "keyword": null,
+    "answer": "¡Hola! ¿En qué puedo ayudarte hoy?",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "50672718761",
+    "refSerialize": "1b4031b59fda57c445fa2b1e23b98e5d"
+  },
+  {
+    "ref": "d712de6f-338c-43fe-a123-07845c6f3d5f",
+    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
+    "answer": "Me gustaría información",
+    "options": {},
+    "from": "50672718761",
+    "refSerialize": "f09d120faaa340cd3c5e3c03fdb0bcb3"
+  },
+  {
+    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
+    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "answer": "*🤖IcoBot🤖*",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "child": null,
+      "delay": 1,
+      "idle": null,
+      "ref": null,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "from": "50672718761"
+  },
+  {
+    "ref": "782ebc21-790c-40ad-b995-dae631db4e4d",
+    "keyword": null,
+    "answer": "Claro, ¿sobre qué curso te gustaría recibir información?",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "50672718761",
+    "refSerialize": "4d62f6877854bbd74da10cc07e7cdb81"
+  },
+  {
+    "ref": "4ad78376-93a7-4538-a393-39b6ca3c3ca4",
+    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
+    "answer": "Que cursos tienen?",
+    "options": {},
+    "from": "50672718761",
+    "refSerialize": "1e82dfdb1b572b2b88998b7d726a19c5"
+  },
+  {
+    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
+    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "answer": "*🤖IcoBot🤖*",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "child": null,
+      "delay": 1,
+      "idle": null,
+      "ref": null,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "from": "50672718761"
+  },
+  {
+    "ref": "07ae77f0-4c88-42fc-aa42-2c846ca62de9",
+    "keyword": null,
+    "answer": "Los cursos disponibles son:\n- Office Básico\n- Inglés para niños\n- Técnico en Contabilidad\n- Técnico en Recursos Humanos\n- Técnico en Secretariado Ejecutivo\n- Técnico en Administración\n- Técnico en Inglés\n- Técnico en Portugués\n- Técnico en Control de Calidad\n- Técnico en Preescolar\n- Técnico en Asistente de Pacientes",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "50672718761",
+    "refSerialize": "bf36a15368c6a4391ff82e87a071137d"
+  },
+  {
+    "ref": "38a91a72-7c9a-4eb3-8914-2171512283b3",
+    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
+    "answer": "Office básico",
+    "options": {},
+    "from": "50672718761",
+    "refSerialize": "b95feb1f29d1cdce411b31fe374012f4"
+  },
+  {
+    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
+    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "answer": "*🤖IcoBot🤖*",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "child": null,
+      "delay": 1,
+      "idle": null,
+      "ref": null,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "from": "50672718761"
+  },
+  {
+    "ref": "3f50a7a1-1034-486d-bec3-a8664908c40a",
+    "keyword": null,
+    "answer": "ℹ️ Información del curso de Office Básico:\n- Duración: 4 meses\n- Modalidad: virtual\n- Costo de matrícula: ₡8,000.00\n- Costo de mensualidad: ₡15,000.00\n- Requerimientos Previos: conocimientos básicos de computación, computadora.\n- Horario: martes de 6:30pm a 8:30pm\n- Categoría: Curso Libre\n- Material: incluido\n\nPara matricular puedes realizar el pago por Sinpe al 88310444 a nombre de ICOTEC GCM o por transferencia bancaria a la cuenta BAC 9520551923 a nombre de Icotec en colones. ¡Inscríbete ahora! ✨🖥️",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "50672718761",
+    "refSerialize": "b2bc45ac95e9cee9bb64005e9064a6a1"
+  },
+  {
+    "ref": "eff9cbd9-a8a1-48d8-a603-73e88dbc0f60",
+    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
+    "answer": "Quiero información de otro curso",
+    "options": {},
+    "from": "50672718761",
+    "refSerialize": "2825814357f1597a0d13c9ed7a949fe9"
+  },
+  {
+    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
+    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "answer": "*🤖IcoBot🤖*",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "child": null,
+      "delay": 1,
+      "idle": null,
+      "ref": null,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "from": "50672718761"
+  },
+  {
+    "ref": "75267728-9fec-4cb3-a735-6397270be470",
+    "keyword": null,
+    "answer": "Claro, te puedo proporcionar información de los siguientes cursos disponibles:\n- Office Básico\n- Inglés para niños\n- Técnico en Contabilidad\n- Técnico en Recursos Humanos\n- Técnico en Secretariado Ejecutivo\n- Técnico en Administración\n- Técnico en Inglés\n- Técnico en Portugués\n- Técnico en Control de Calidad\n- Técnico en Preescolar\n- Técnico en Asistente de Pacientes\n\n¿Qué curso te interesa conocer más en detalle?",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "50672718761",
+    "refSerialize": "507788786250e97e9d7f40a6b30d6ec6"
+  },
+  {
+    "ref": "cb21f7c7-90e3-490a-ae33-149c3ad1dba8",
+    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
+    "answer": "Técnico en preescolar",
+    "options": {},
+    "from": "50672718761",
+    "refSerialize": "b6532752c2ce8ed3cec78a43cf304c25"
+  },
+  {
+    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
+    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "answer": "*🤖IcoBot🤖*",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "child": null,
+      "delay": 1,
+      "idle": null,
+      "ref": null,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "from": "50672718761"
+  },
+  {
+    "ref": "dc93f5b7-3dfa-460b-ad03-9da9adb98389",
+    "keyword": null,
+    "answer": "- **Duración**: 8 meses\n- **Modalidad**: virtual\n- **Costo de matrícula**: ₡8,000.00\n- **Costo de mensualidad**: ₡15,000.00 (con beca aplicada)\n- **Requerimientos Previos**: no requiere conocimientos previos, solo cuaderno, lápiz o lapicero.\n- **Horario**: jueves de 6:30pm a 8:20pm\n- **Categoría**: Carrera Técnica\n- **Material**: incluido\n- **Imagen**: Técnico_en_Preescolar.jpeg",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "50672718761",
+    "refSerialize": "f7680cd942eed44aa84a022df0d10379"
+  },
+  {
+    "ref": "de272465-49fe-4f8e-9f49-94acafd123d2",
+    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
+    "answer": "Tienes imagen del curso?",
+    "options": {},
+    "from": "50672718761",
+    "refSerialize": "6dd3b443858f70b25d69635ff9cd912b"
+  },
+  {
+    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
+    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "answer": "*🤖IcoBot🤖*",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "child": null,
+      "delay": 1,
+      "idle": null,
+      "ref": null,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "from": "50672718761"
+  },
+  {
+    "ref": "5b0279fc-6dd2-4c83-95f5-fc4cf86981e2",
+    "keyword": null,
+    "answer": "¡Claro! aquí tienes las imágenes de los cursos disponibles:\n1. Office Básico:\n   - Imagen: Office_Básico.jpeg\n\n2. Inglés para niños:\n   - Imagen: Ingles_para_niños.jpg\n\n3. Técnico en Contabilidad:\n   - Imagen: Técnico_en_Contabilidad.jpeg\n\n4. Técnico en Recursos Humanos:\n   - Imagen: Técnico_en_Recursos_Humanos.jpeg\n\n5. Técnico en Secretariado Ejecutivo:\n   - Imagen: Técnico_en_Secretariado_Ejecutivo.jpeg\n\n6. Técnico en Administración:\n   - Imagen: Técnico_en_Administración.jpeg\n\n7. Técnico en Inglés:\n   - Imagen: Técnico_en_Inglés.jpeg\n\n8. Técnico en Portugués:\n   - Imagen: Técnico_en_Portugués.jpeg\n\n9. Técnico en Control de Calidad:\n   - Imagen: Técnico_en_Control_de_Calidad.jpeg\n\n10. Técnico en Preescolar:\n    - Imagen: Técnico_en_Preescolar.jpeg\n\n11. Técnico en Asistente de Pacientes:\n    - Imagen: Técnico_en_Asistentede_de_Pacientes.jpeg\n\nEspero que te sea útil.",
+    "options": {
+      "media": "C:\\Users\\jonas\\Escritorio\\IcoBot\\imagenes\\Office_Básico.jpeg",
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "50672718761",
+    "refSerialize": "58d7d165524a23e2e1b111a28a803c03"
+  }
+]

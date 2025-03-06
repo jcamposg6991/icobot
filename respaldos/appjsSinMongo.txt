@@ -1,0 +1,41 @@
+const { createBot, createProvider, createFlow, addKeyword, EVENTS } = require('@bot-whatsapp/bot');
+require("dotenv").config();
+
+const QRPortalWeb = require('@bot-whatsapp/portal');
+const BaileysProvider = require('@bot-whatsapp/provider/baileys');
+const MockAdapter= require('@bot-whatsapp/database/json');
+const path = require("path");
+const fs = require("fs");
+const chat = require("./chatGPT");
+const { handlerAI } = require("./whisper");
+
+// Cargar textos y prompts desde archivos
+const pathConsultas = path.join(__dirname, "mensajes", "promptConsultas.txt");
+const promptConsultas = fs.readFileSync(pathConsultas, "utf8");
+
+// Flujo para mensajes de texto
+const flowConsultas = addKeyword([".*"]) // Captura cualquier texto
+    .addAnswer("*IcoBot*", { delay: 100}, async (ctx, ctxFn) => {
+        const prompt = promptConsultas;
+        const consulta = ctx.body; // Captura el cuerpo del mensaje del usuario
+        const answer = await chat(prompt, consulta);
+        await ctxFn.flowDynamic(answer.content);
+    });
+
+
+// Configuración principal del bot
+const main = async () => {
+    const adapterDB = new MockAdapter();
+    const adapterFlow = createFlow([flowConsultas]);
+    const adapterProvider = createProvider(BaileysProvider);
+
+    createBot({
+        flow: adapterFlow,
+        provider: adapterProvider,
+        database: adapterDB,
+    });
+
+    QRPortalWeb(); // Genera el código QR para conectarte a WhatsApp
+};
+
+main();
