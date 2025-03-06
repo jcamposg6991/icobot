@@ -36,17 +36,17 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
     .addAnswer("*🤖IcoBot🤖*", { delay: 1 }, async (ctx, ctxFn) => {
         const userId = ctx.from;
 
-        // Enviar saludo si el usuario es nuevo
-        if (!usersWhoReceivedWelcome.has(userId)) {
-            usersWhoReceivedWelcome.add(userId);
-            await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
-        }
-
-        // Procesar la consulta del usuario
-        const consulta = ctx.body.trim();
-        console.log(consulta);
-
         try {
+            // Enviar saludo si el usuario es nuevo
+            if (!usersWhoReceivedWelcome.has(userId)) {
+                usersWhoReceivedWelcome.add(userId);
+                await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
+            }
+
+            // Procesar la consulta del usuario
+            const consulta = ctx.body.trim();
+            console.log(consulta);
+
             const answer = await chat(promptConsultas, consulta); // ChatGPT responde
             console.log(answer);
 
@@ -87,5 +87,11 @@ const main = async () => {
         console.error("Error al iniciar el bot:", error);
     }
 };
+
+// Captura global de promesas no manejadas
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Promise Rejection:', reason);
+    console.error('Promise:', promise);
+});
 
 main();
