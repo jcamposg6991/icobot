@@ -49,17 +49,21 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         // Procesar la consulta del usuario
         const consulta = ctx.body.trim();
         console.log(consulta);
-        const answer = await chat(promptConsultas, consulta); // ChatGPT responde
-        console.log(answer);
-        
+        try {
+            const answer = await chat(promptConsultas, consulta); // ChatGPT responde
+            console.log(answer);
+            
+            // Buscar si la respuesta incluye una imagen
+            const rutaImagen = obtenerImagenCurso(answer.content);
 
-        // Buscar si la respuesta incluye una imagen
-        const rutaImagen = obtenerImagenCurso(answer.content);
-
-        if (rutaImagen) {
-            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
-        } else {
-            await ctxFn.flowDynamic(answer.content);
+            if (rutaImagen) {
+                await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
+            } else {
+                await ctxFn.flowDynamic(answer.content);
+            }
+        } catch (error) {
+            console.error('Error procesando la consulta:', error);
+            await ctxFn.flowDynamic("Lo siento, ocurrió un error al procesar tu consulta.");
         }
     });
 
@@ -71,14 +75,11 @@ const main = async () => {
             throw new Error('MONGO_DB_URI no está definida.');
         }
 
-        // Conexión a MongoDB con manejo de errores
+        // Conexión a MongoDB sin esperar un método connect(), si MongoAdapter no lo requiere
         const adapterDB = new MongoAdapter({
             dbUri: process.env.MONGO_DB_URI,
             dbName: "IcoBot",
         });
-
-        // Comprobación de la conexión (si MongoAdapter tiene un método para esto)
-        await adapterDB.connect(); // Si no hay un método connect(), omite esta línea
 
         // Inicialización del flujo y proveedor
         const adapterFlow = createFlow([flowConsultas]);
@@ -99,4 +100,3 @@ const main = async () => {
 };
 
 main();
-
