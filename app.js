@@ -4,7 +4,7 @@ require("dotenv").config();
 const QRPortalWeb = require('@bot-whatsapp/portal');
 const BaileysProvider = require('@bot-whatsapp/provider/baileys');
 // const MongoAdapter = require('@bot-whatsapp/database/mongo');
-const MockAdapter= require('@bot-whatsapp/database/json');
+const MockAdapter = require('@bot-whatsapp/database/json');
 const path = require("path");
 const fs = require("fs");
 const chat = require("./chatGPT");
@@ -40,29 +40,34 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
     .addAnswer("*🤖IcoBot🤖*", { delay: 1 }, async (ctx, ctxFn) => {
         const userId = ctx.from; 
 
-        // Enviar saludo si el usuario es nuevo
-        if (!usersWhoReceivedWelcome.has(userId)) {
-            usersWhoReceivedWelcome.add(userId);
-            await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
-        }
+        try {
+            // Enviar saludo si el usuario es nuevo
+            if (!usersWhoReceivedWelcome.has(userId)) {
+                usersWhoReceivedWelcome.add(userId);
+                await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
+            }
 
-        // Procesar la consulta del usuario
-        const consulta = ctx.body.trim();
-        console.log(consulta);
-        
-        // Verificar si la variable OPENAI_API_KEY está siendo tomada correctamente
-        console.log("OPENAI_API_KEY:", process.env.OPENAI_API_KEY);
+            // Procesar la consulta del usuario
+            const consulta = ctx.body.trim();
+            console.log(consulta);
 
-        const answer = await chat(promptConsultas, consulta); // ChatGPT responde
-        console.log(answer);
+            // Imprimir la variable OPENAI_API_KEY
+            console.log("OPENAI_API_KEY:", process.env.OPENAI_API_KEY);
 
-        // Buscar si la respuesta incluye una imagen
-        const rutaImagen = obtenerImagenCurso(answer.content);
+            const answer = await chat(promptConsultas, consulta); // ChatGPT responde
+            console.log(answer);
 
-        if (rutaImagen) {
-            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
-        } else {
-            await ctxFn.flowDynamic(answer.content);
+            // Buscar si la respuesta incluye una imagen
+            const rutaImagen = obtenerImagenCurso(answer.content);
+
+            if (rutaImagen) {
+                await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
+            } else {
+                await ctxFn.flowDynamic(answer.content);
+            }
+        } catch (error) {
+            console.error("Error en el flujo de consultas:", error);
+            await ctxFn.flowDynamic("Ocurrió un error inesperado. Por favor, intenta nuevamente.");
         }
     });
 
@@ -77,13 +82,17 @@ const main = async () => {
     const adapterFlow = createFlow([flowConsultas]);
     const adapterProvider = createProvider(BaileysProvider);
 
-    createBot({
-        flow: adapterFlow,
-        provider: adapterProvider,
-        database: adapterDB,
-    });
+    try {
+        createBot({
+            flow: adapterFlow,
+            provider: adapterProvider,
+            database: adapterDB,
+        });
 
-    QRPortalWeb();
+        QRPortalWeb();
+    } catch (error) {
+        console.error("Error en la configuración del bot:", error);
+    }
 };
 
 main();
