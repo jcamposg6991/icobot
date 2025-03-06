@@ -4,10 +4,11 @@ require("dotenv").config();
 const QRPortalWeb = require('@bot-whatsapp/portal');
 const BaileysProvider = require('@bot-whatsapp/provider/baileys');
 // const MongoAdapter = require('@bot-whatsapp/database/mongo');
-const MockAdapter = require('@bot-whatsapp/database/json');
+const MockAdapter= require('@bot-whatsapp/database/json');
 const path = require("path");
 const fs = require("fs");
 const chat = require("./chatGPT");
+const { log } = require('console');
 
 // Cargar textos y prompts desde archivos
 const pathConsultas = path.join(__dirname, "mensajes", "promptConsultas.txt");
@@ -19,7 +20,7 @@ const saludo = fs.readFileSync(pathSaludo, "utf8");
 const imagenSaludo = path.join(__dirname, "imagenes", "saludo.jpg");
 
 // Almacenamiento temporal para rastrear usuarios que ya pasaron por el flujo de bienvenida
-const usersWhoReceivedWelcome = new Set();
+const usersWhoReceivedWelcome = new Set(); 
 
 // Función para verificar si la respuesta contiene una referencia a una imagen
 const obtenerImagenCurso = (respuestaTexto) => {
@@ -27,7 +28,7 @@ const obtenerImagenCurso = (respuestaTexto) => {
     if (matchImagen) {
         const rutaImagen = path.resolve(__dirname, "imagenes", matchImagen[1].trim());
         if (fs.existsSync(rutaImagen)) {
-            console.log(`Imagen encontrada: ${rutaImagen}`);
+            console.log(rutaImagen);
             return rutaImagen; 
         }
     }
@@ -37,66 +38,52 @@ const obtenerImagenCurso = (respuestaTexto) => {
 // Flujo dinámico para manejar consultas generales (cursos u otros temas)
 const flowConsultas = addKeyword([EVENTS.MESSAGE])
     .addAnswer("*🤖IcoBot🤖*", { delay: 1 }, async (ctx, ctxFn) => {
-        try {
-            const userId = ctx.from; 
+        const userId = ctx.from; 
 
-            // Enviar saludo si el usuario es nuevo
-            if (!usersWhoReceivedWelcome.has(userId)) {
-                usersWhoReceivedWelcome.add(userId);
-                await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
-            }
+        // Enviar saludo si el usuario es nuevo
+        if (!usersWhoReceivedWelcome.has(userId)) {
+            usersWhoReceivedWelcome.add(userId);
+            await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
+        }
 
-            // Procesar la consulta del usuario
-            const consulta = ctx.body.trim();
-            console.log(`Consulta recibida: ${consulta}`);
+        // Procesar la consulta del usuario
+        const consulta = ctx.body.trim();
+        console.log(consulta);
+        
+        // Verificar si la variable OPENAI_API_KEY está siendo tomada correctamente
+        console.log("OPENAI_API_KEY:", process.env.OPENAI_API_KEY);
 
-            // Llamada a chatGPT con manejo de errores
-            const answer = await chat(promptConsultas, consulta);
+        const answer = await chat(promptConsultas, consulta); // ChatGPT responde
+        console.log(answer);
 
-            if (!answer || !answer.content) {
-                console.error("Error: chatGPT no devolvió una respuesta válida.");
-                return await ctxFn.flowDynamic("Lo siento, hubo un problema procesando tu solicitud. Inténtalo de nuevo más tarde.");
-            }
+        // Buscar si la respuesta incluye una imagen
+        const rutaImagen = obtenerImagenCurso(answer.content);
 
-            console.log(`Respuesta de chatGPT: ${answer.content}`);
-
-            // Buscar si la respuesta incluye una imagen
-            const rutaImagen = obtenerImagenCurso(answer.content);
-
-            if (rutaImagen) {
-                await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
-            } else {
-                await ctxFn.flowDynamic(answer.content);
-            }
-
-        } catch (error) {
-            console.error("Error en el flujo de consultas:", error);
-            await ctxFn.flowDynamic("Ocurrió un error inesperado. Por favor, intenta nuevamente.");
+        if (rutaImagen) {
+            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
+        } else {
+            await ctxFn.flowDynamic(answer.content);
         }
     });
 
 // Configuración principal del bot
 const main = async () => {
-    try {
-        const adapterDB = new MockAdapter();
-        // const adapterDB = new MongoAdapter({
-        //     dbUri: process.env.MONGO_DB_URI, 
-        //     dbName: "IcoBot",
-        // });
+    const adapterDB = new MockAdapter();
+    // const adapterDB = new MongoAdapter({
+    //     dbUri: process.env.MONGO_DB_URI, 
+    //     dbName: "IcoBot",
+    // });
 
-        const adapterFlow = createFlow([flowConsultas]);
-        const adapterProvider = createProvider(BaileysProvider);
+    const adapterFlow = createFlow([flowConsultas]);
+    const adapterProvider = createProvider(BaileysProvider);
 
-        createBot({
-            flow: adapterFlow,
-            provider: adapterProvider,
-            database: adapterDB,
-        });
+    createBot({
+        flow: adapterFlow,
+        provider: adapterProvider,
+        database: adapterDB,
+    });
 
-        QRPortalWeb();
-    } catch (error) {
-        console.error("Error en la configuración del bot:", error);
-    }
+    QRPortalWeb();
 };
 
 main();
