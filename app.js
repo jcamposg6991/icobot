@@ -17,7 +17,7 @@ const promptConsultas = fs.readFileSync(pathConsultas, "utf8");
 const pathSaludo = path.join(__dirname, "mensajes", "saludo.txt");
 const saludo = fs.readFileSync(pathSaludo, "utf8");
 
-const imagenSaludo = "/app/public/saludo.jpg";
+const imagenSaludo = path.join(__dirname, "public", "saludo.jpg");
 
 // Almacenamiento temporal para rastrear usuarios que ya pasaron por el flujo de bienvenida
 const usersWhoReceivedWelcome = new Set(); 
@@ -43,7 +43,7 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         // Enviar saludo si el usuario es nuevo
         if (!usersWhoReceivedWelcome.has(userId)) {
             usersWhoReceivedWelcome.add(userId);
-            await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
+            await ctxFn.flowDynamic(saludo);
         }
 
         // Procesar la consulta del usuario
