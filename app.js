@@ -65,22 +65,38 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
 
 // Configuración principal del bot
 const main = async () => {
-    // const adapterDB = new MockAdapter();
-    const adapterDB = new MongoAdapter({
-        dbUri: process.env.MONGO_DB_URI, 
-        dbName: "IcoBot",
-    });
+    try {
+        // Comprobar si la URI de MongoDB está definida
+        if (!process.env.MONGO_DB_URI) {
+            throw new Error('MONGO_DB_URI no está definida.');
+        }
 
-    const adapterFlow = createFlow([flowConsultas]);
-    const adapterProvider = createProvider(BaileysProvider);
+        // Conexión a MongoDB con manejo de errores
+        const adapterDB = new MongoAdapter({
+            dbUri: process.env.MONGO_DB_URI,
+            dbName: "IcoBot",
+        });
 
-    createBot({
-        flow: adapterFlow,
-        provider: adapterProvider,
-        database: adapterDB,
-    });
+        // Comprobación de la conexión (si MongoAdapter tiene un método para esto)
+        await adapterDB.connect(); // Si no hay un método connect(), omite esta línea
 
-    QRPortalWeb();
+        // Inicialización del flujo y proveedor
+        const adapterFlow = createFlow([flowConsultas]);
+        const adapterProvider = createProvider(BaileysProvider);
+
+        // Creación del bot
+        createBot({
+            flow: adapterFlow,
+            provider: adapterProvider,
+            database: adapterDB,
+        });
+
+        // Portal QR
+        QRPortalWeb();
+    } catch (error) {
+        console.error('Error en la función main:', error);
+    }
 };
 
 main();
+
