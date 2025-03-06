@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm i
 COPY . .
-COPY public
+COPY public /app
 ARG RAILWAY_STATIC_URL
 ARG PUBLIC_URL
 ARG PORT

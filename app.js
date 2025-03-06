@@ -43,7 +43,7 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         // Enviar saludo si el usuario es nuevo
         if (!usersWhoReceivedWelcome.has(userId)) {
             usersWhoReceivedWelcome.add(userId);
-            await ctxFn.flowDynamic(saludo);
+            await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
         }
 
         // Procesar la consulta del usuario
