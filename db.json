@@ -1,15 +1,15 @@
 [
   {
-    "ref": "ce675f74-2a47-45e1-afd7-68997a4419c9",
-    "keyword": "5ce2d488f71cb93292a86837b2dae6bc",
+    "ref": "23c9187d-7776-465d-b762-6364054e0542",
+    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
     "answer": "Hola",
     "options": {},
     "from": "50672718761",
     "refSerialize": "c22e4066d61d81721def9b25d8a397e8"
   },
   {
-    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
-    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "ref": "ans_cd4674b1-5c2c-41a0-a679-7053bc6dbd12",
+    "keyword": "key_a764db50-c029-4f95-b82e-b62897a0efa0",
     "answer": "*🤖IcoBot🤖*",
     "options": {
       "media": null,
@@ -23,13 +23,13 @@
       "keyword": {},
       "callback": true
     },
-    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "refSerialize": "53586b625911f8ca74010e881de4507f",
     "from": "50672718761"
   },
   {
-    "ref": "fdea9c9b-871f-4831-af9c-aaaf7018c4a3",
+    "ref": "fc212cd1-42af-4c96-b4e2-e6fb1959c52d",
     "keyword": null,
-    "answer": "¡Hola! Somos ICOTEC, un instituto que se dedica a la educación técnica y cursos libres de gran calidad a bajo costo, con más de 20 años en el mercado costarricense. Estamos afiliados a CANAEP (Cámara Nacional de Educación Privada) y al INA (Inglés).\r\n",
+    "answer": "Somos ICOTEC, un instituto que se dedica a la educación técnica y cursos libres de gran calidad a bajo costo, con más de 20 años en el mercado costarricense. Estamos afiliados a CANAEP (Cámara Nacional de Educación Privada) y al INA (Inglés).\r\n",
     "options": {
       "media": "C:\\Users\\jonas\\Escritorio\\IcoBot\\imagenes\\saludo.jpg",
       "buttons": [],
@@ -37,10 +37,10 @@
       "delay": 0
     },
     "from": "50672718761",
-    "refSerialize": "f7b58515dec06654a4a992765db4a96e"
+    "refSerialize": "80be600b18f19917962c07a822c11ea9"
   },
   {
-    "ref": "ac9d5672-8800-49bb-9485-4aa35b823376",
+    "ref": "e57cd47b-8201-4059-aa2f-e98e4516cd74",
     "keyword": null,
     "answer": "¡Hola! ¿En qué puedo ayudarte hoy?",
     "options": {
@@ -53,16 +53,16 @@
     "refSerialize": "1b4031b59fda57c445fa2b1e23b98e5d"
   },
   {
-    "ref": "d712de6f-338c-43fe-a123-07845c6f3d5f",
-    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
-    "answer": "Me gustaría información",
+    "ref": "aaaeeda0-d779-4883-8da9-c38fb23e1812",
+    "keyword": "53586b625911f8ca74010e881de4507f",
+    "answer": "Tengo una consulta",
     "options": {},
     "from": "50672718761",
-    "refSerialize": "f09d120faaa340cd3c5e3c03fdb0bcb3"
+    "refSerialize": "e6237e8ea7d7309a6581c6bc2de0a5ed"
   },
   {
-    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
-    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "ref": "ans_cd4674b1-5c2c-41a0-a679-7053bc6dbd12",
+    "keyword": "key_a764db50-c029-4f95-b82e-b62897a0efa0",
     "answer": "*🤖IcoBot🤖*",
     "options": {
       "media": null,
@@ -76,13 +76,13 @@
       "keyword": {},
       "callback": true
     },
-    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "refSerialize": "53586b625911f8ca74010e881de4507f",
     "from": "50672718761"
   },
   {
-    "ref": "782ebc21-790c-40ad-b995-dae631db4e4d",
+    "ref": "6e93d4da-d8d1-4ad2-9006-a057ad6d7ea1",
     "keyword": null,
-    "answer": "Claro, ¿sobre qué curso te gustaría recibir información?",
+    "answer": "Claro, ¿en qué puedo ayudarte?",
     "options": {
       "media": null,
       "buttons": [],
@@ -90,19 +90,19 @@
       "delay": 0
     },
     "from": "50672718761",
-    "refSerialize": "4d62f6877854bbd74da10cc07e7cdb81"
+    "refSerialize": "58ba0b5604a8ec23e07a6545719576d1"
   },
   {
-    "ref": "4ad78376-93a7-4538-a393-39b6ca3c3ca4",
-    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
-    "answer": "Que cursos tienen?",
+    "ref": "ccff32c5-32ae-4b18-b10c-3cd88119e1a5",
+    "keyword": "53586b625911f8ca74010e881de4507f",
+    "answer": "Quiero información de cursos",
     "options": {},
     "from": "50672718761",
-    "refSerialize": "1e82dfdb1b572b2b88998b7d726a19c5"
+    "refSerialize": "ecdf6c8a390219084abd8b14bdbb2031"
   },
   {
-    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
-    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "ref": "ans_cd4674b1-5c2c-41a0-a679-7053bc6dbd12",
+    "keyword": "key_a764db50-c029-4f95-b82e-b62897a0efa0",
     "answer": "*🤖IcoBot🤖*",
     "options": {
       "media": null,
@@ -116,13 +116,13 @@
       "keyword": {},
       "callback": true
     },
-    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "refSerialize": "53586b625911f8ca74010e881de4507f",
     "from": "50672718761"
   },
   {
-    "ref": "07ae77f0-4c88-42fc-aa42-2c846ca62de9",
+    "ref": "ac557fbd-e415-45cc-a6f7-1e6775734943",
     "keyword": null,
-    "answer": "Los cursos disponibles son:\n- Office Básico\n- Inglés para niños\n- Técnico en Contabilidad\n- Técnico en Recursos Humanos\n- Técnico en Secretariado Ejecutivo\n- Técnico en Administración\n- Técnico en Inglés\n- Técnico en Portugués\n- Técnico en Control de Calidad\n- Técnico en Preescolar\n- Técnico en Asistente de Pacientes",
+    "answer": "Office Básico\nInglés para niños\nTécnico en Contabilidad\nTécnico en Recursos Humanos\nTécnico en Secretariado Ejecutivo\nTécnico en Administración\nTécnico en Inglés\nTécnico en Portugués\nTécnico en Control de Calidad\nTécnico en Preescolar\nTécnico en Asistente de Pacientes",
     "options": {
       "media": null,
       "buttons": [],
@@ -130,19 +130,19 @@
       "delay": 0
     },
     "from": "50672718761",
-    "refSerialize": "bf36a15368c6a4391ff82e87a071137d"
+    "refSerialize": "76127391520539bc2f24d4b1d14aba18"
   },
   {
-    "ref": "38a91a72-7c9a-4eb3-8914-2171512283b3",
-    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
-    "answer": "Office básico",
+    "ref": "05b18540-4fed-40a0-bb12-0530d8061646",
+    "keyword": "53586b625911f8ca74010e881de4507f",
+    "answer": "Preescolar",
     "options": {},
     "from": "50672718761",
-    "refSerialize": "b95feb1f29d1cdce411b31fe374012f4"
+    "refSerialize": "7db43e26bc0313e77e7d7eba2bc44b1b"
   },
   {
-    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
-    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "ref": "ans_cd4674b1-5c2c-41a0-a679-7053bc6dbd12",
+    "keyword": "key_a764db50-c029-4f95-b82e-b62897a0efa0",
     "answer": "*🤖IcoBot🤖*",
     "options": {
       "media": null,
@@ -156,33 +156,33 @@
       "keyword": {},
       "callback": true
     },
-    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "refSerialize": "53586b625911f8ca74010e881de4507f",
     "from": "50672718761"
   },
   {
-    "ref": "3f50a7a1-1034-486d-bec3-a8664908c40a",
+    "ref": "029b5fdd-b0fb-4fd0-ac17-650efe5c8fd0",
     "keyword": null,
-    "answer": "ℹ️ Información del curso de Office Básico:\n- Duración: 4 meses\n- Modalidad: virtual\n- Costo de matrícula: ₡8,000.00\n- Costo de mensualidad: ₡15,000.00\n- Requerimientos Previos: conocimientos básicos de computación, computadora.\n- Horario: martes de 6:30pm a 8:30pm\n- Categoría: Curso Libre\n- Material: incluido\n\nPara matricular puedes realizar el pago por Sinpe al 88310444 a nombre de ICOTEC GCM o por transferencia bancaria a la cuenta BAC 9520551923 a nombre de Icotec en colones. ¡Inscríbete ahora! ✨🖥️",
+    "answer": "Duración: 8 meses\nModalidad: virtual\nCosto de matrícula: ₡8,000.00\nCosto de mensualidad: ₡15,000.00\nRequerimientos Previos: no requiere conocimientos previos, solo cuaderno, lápiz o lapicero.\nHorario: jueves de 6:30pm a 8:20pm\nCategoría: Carrera Técnica\nMaterial: incluido",
     "options": {
-      "media": null,
+      "media": "C:\\Users\\jonas\\Escritorio\\IcoBot\\imagenes\\Técnico_en_Preescolar.jpeg",
       "buttons": [],
       "capture": false,
       "delay": 0
     },
     "from": "50672718761",
-    "refSerialize": "b2bc45ac95e9cee9bb64005e9064a6a1"
+    "refSerialize": "3b491b066e24f0fc9d91f53c0218252a"
   },
   {
-    "ref": "eff9cbd9-a8a1-48d8-a603-73e88dbc0f60",
-    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
-    "answer": "Quiero información de otro curso",
+    "ref": "3f6cf5e4-5ddf-408f-9975-60424dad1145",
+    "keyword": "53586b625911f8ca74010e881de4507f",
+    "answer": "Hola",
     "options": {},
     "from": "50672718761",
-    "refSerialize": "2825814357f1597a0d13c9ed7a949fe9"
+    "refSerialize": "c22e4066d61d81721def9b25d8a397e8"
   },
   {
-    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
-    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "ref": "ans_cd4674b1-5c2c-41a0-a679-7053bc6dbd12",
+    "keyword": "key_a764db50-c029-4f95-b82e-b62897a0efa0",
     "answer": "*🤖IcoBot🤖*",
     "options": {
       "media": null,
@@ -196,13 +196,13 @@
       "keyword": {},
       "callback": true
     },
-    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "refSerialize": "53586b625911f8ca74010e881de4507f",
     "from": "50672718761"
   },
   {
-    "ref": "75267728-9fec-4cb3-a735-6397270be470",
+    "ref": "bcb530a3-31b0-4d6a-b9fd-cfe66c3c3297",
     "keyword": null,
-    "answer": "Claro, te puedo proporcionar información de los siguientes cursos disponibles:\n- Office Básico\n- Inglés para niños\n- Técnico en Contabilidad\n- Técnico en Recursos Humanos\n- Técnico en Secretariado Ejecutivo\n- Técnico en Administración\n- Técnico en Inglés\n- Técnico en Portugués\n- Técnico en Control de Calidad\n- Técnico en Preescolar\n- Técnico en Asistente de Pacientes\n\n¿Qué curso te interesa conocer más en detalle?",
+    "answer": "¡Hola! ¿En qué puedo ayudarte hoy?",
     "options": {
       "media": null,
       "buttons": [],
@@ -210,19 +210,19 @@
       "delay": 0
     },
     "from": "50672718761",
-    "refSerialize": "507788786250e97e9d7f40a6b30d6ec6"
+    "refSerialize": "1b4031b59fda57c445fa2b1e23b98e5d"
   },
   {
-    "ref": "cb21f7c7-90e3-490a-ae33-149c3ad1dba8",
-    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
-    "answer": "Técnico en preescolar",
+    "ref": "6f03429d-08f5-43af-b7dd-c0588846fe6e",
+    "keyword": "53586b625911f8ca74010e881de4507f",
+    "answer": "Hola",
     "options": {},
     "from": "50672718761",
-    "refSerialize": "b6532752c2ce8ed3cec78a43cf304c25"
+    "refSerialize": "c22e4066d61d81721def9b25d8a397e8"
   },
   {
-    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
-    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
+    "ref": "ans_cd4674b1-5c2c-41a0-a679-7053bc6dbd12",
+    "keyword": "key_a764db50-c029-4f95-b82e-b62897a0efa0",
     "answer": "*🤖IcoBot🤖*",
     "options": {
       "media": null,
@@ -236,13 +236,13 @@
       "keyword": {},
       "callback": true
     },
-    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
+    "refSerialize": "53586b625911f8ca74010e881de4507f",
     "from": "50672718761"
   },
   {
-    "ref": "dc93f5b7-3dfa-460b-ad03-9da9adb98389",
+    "ref": "84337a37-1902-47a9-abd2-433820396dc7",
     "keyword": null,
-    "answer": "- **Duración**: 8 meses\n- **Modalidad**: virtual\n- **Costo de matrícula**: ₡8,000.00\n- **Costo de mensualidad**: ₡15,000.00 (con beca aplicada)\n- **Requerimientos Previos**: no requiere conocimientos previos, solo cuaderno, lápiz o lapicero.\n- **Horario**: jueves de 6:30pm a 8:20pm\n- **Categoría**: Carrera Técnica\n- **Material**: incluido\n- **Imagen**: Técnico_en_Preescolar.jpeg",
+    "answer": "¡Hola! ¿En qué puedo ayudarte hoy?",
     "options": {
       "media": null,
       "buttons": [],
@@ -250,46 +250,6 @@
       "delay": 0
     },
     "from": "50672718761",
-    "refSerialize": "f7680cd942eed44aa84a022df0d10379"
-  },
-  {
-    "ref": "de272465-49fe-4f8e-9f49-94acafd123d2",
-    "keyword": "20a834b4395759c7ac4acb884d3a57ee",
-    "answer": "Tienes imagen del curso?",
-    "options": {},
-    "from": "50672718761",
-    "refSerialize": "6dd3b443858f70b25d69635ff9cd912b"
-  },
-  {
-    "ref": "ans_160ea2b9-6cf6-4c4c-bdf1-9b316c1f0e5a",
-    "keyword": "key_a6d5cea8-7647-4d26-b11d-bc1234e9d5c9",
-    "answer": "*🤖IcoBot🤖*",
-    "options": {
-      "media": null,
-      "buttons": [],
-      "capture": false,
-      "child": null,
-      "delay": 1,
-      "idle": null,
-      "ref": null,
-      "nested": [],
-      "keyword": {},
-      "callback": true
-    },
-    "refSerialize": "20a834b4395759c7ac4acb884d3a57ee",
-    "from": "50672718761"
-  },
-  {
-    "ref": "5b0279fc-6dd2-4c83-95f5-fc4cf86981e2",
-    "keyword": null,
-    "answer": "¡Claro! aquí tienes las imágenes de los cursos disponibles:\n1. Office Básico:\n   - Imagen: Office_Básico.jpeg\n\n2. Inglés para niños:\n   - Imagen: Ingles_para_niños.jpg\n\n3. Técnico en Contabilidad:\n   - Imagen: Técnico_en_Contabilidad.jpeg\n\n4. Técnico en Recursos Humanos:\n   - Imagen: Técnico_en_Recursos_Humanos.jpeg\n\n5. Técnico en Secretariado Ejecutivo:\n   - Imagen: Técnico_en_Secretariado_Ejecutivo.jpeg\n\n6. Técnico en Administración:\n   - Imagen: Técnico_en_Administración.jpeg\n\n7. Técnico en Inglés:\n   - Imagen: Técnico_en_Inglés.jpeg\n\n8. Técnico en Portugués:\n   - Imagen: Técnico_en_Portugués.jpeg\n\n9. Técnico en Control de Calidad:\n   - Imagen: Técnico_en_Control_de_Calidad.jpeg\n\n10. Técnico en Preescolar:\n    - Imagen: Técnico_en_Preescolar.jpeg\n\n11. Técnico en Asistente de Pacientes:\n    - Imagen: Técnico_en_Asistentede_de_Pacientes.jpeg\n\nEspero que te sea útil.",
-    "options": {
-      "media": "C:\\Users\\jonas\\Escritorio\\IcoBot\\imagenes\\Office_Básico.jpeg",
-      "buttons": [],
-      "capture": false,
-      "delay": 0
-    },
-    "from": "50672718761",
-    "refSerialize": "58d7d165524a23e2e1b111a28a803c03"
+    "refSerialize": "1b4031b59fda57c445fa2b1e23b98e5d"
   }
 ]
