@@ -99,4 +99,11 @@ const main = async () => {
     }
 };
 
+// Manejo de promesas no gestionadas globalmente (para prevenir errores no capturados)
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+    // Aquí puedes optar por hacer algo con la razón del rechazo, como cerrar la aplicación o realizar un log detallado
+    // Es importante no dejar promesas rechazadas sin manejar.
+});
+
 main();
