@@ -17,7 +17,7 @@ const promptConsultas = fs.readFileSync(pathConsultas, "utf8");
 const pathSaludo = path.join(__dirname, "mensajes", "saludo.txt");
 const saludo = fs.readFileSync(pathSaludo, "utf8");
 
-const imagenSaludo = path.join(__dirname, "./public", "saludo.jpg");
+const imagenSaludo = path.join(__dirname, "public", "saludo.jpg");
 
 // Almacenamiento temporal para rastrear usuarios que ya pasaron por el flujo de bienvenida
 const usersWhoReceivedWelcome = new Set(); 
