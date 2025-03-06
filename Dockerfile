@@ -1,32 +1,10 @@
-FROM node:21-bullseye-slim as builder
-
+FROM node:18-bullseye as bot
 WORKDIR /app
-
-RUN corepack enable && corepack prepare pnpm@latest --activate
-ENV PNPM_HOME=/usr/local/bin
-
-COPY package.json-lock.yaml ./
-RUN pnpm install
-
-COPY . .
-
-RUN pnpm run build
-
-FROM node:21-bullseye-slim as deploy
-
-WORKDIR /app
-
-ARG PORT
-ENV PORT $PORT
-EXPOSE $PORT
-
+COPY package*.json ./
+RUN npm i
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/.json /app/-lock.yaml ./
-
-RUN corepack enable && corepack prepare pnpm@latest --activate 
-ENV PNPM_HOME=/usr/local/bin
-
-RUN pnpm install --production --ignore-scripts
-
+COPY . .
+ARG RAILWAY_STATIC_URL
+ARG PUBLIC_URL
+ARG PORT
 CMD ["npm", "start"]
