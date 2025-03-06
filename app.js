@@ -24,7 +24,7 @@ const obtenerImagenCurso = (respuestaTexto) => {
     if (matchImagen) {
         const rutaImagen = path.resolve(__dirname, "imagenes", matchImagen[1].trim());
         if (fs.existsSync(rutaImagen)) {
-            console.log(rutaImagen);
+            console.log(`Imagen encontrada: ${rutaImagen}`);
             return rutaImagen;
         }
     }
@@ -37,18 +37,21 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         const userId = ctx.from;
 
         try {
+            console.log(`Usuario ID: ${userId}`);
+
             // Enviar saludo si el usuario es nuevo
             if (!usersWhoReceivedWelcome.has(userId)) {
                 usersWhoReceivedWelcome.add(userId);
+                console.log("Enviando saludo...");
                 await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
             }
 
             // Procesar la consulta del usuario
             const consulta = ctx.body.trim();
-            console.log(consulta);
+            console.log(`Consulta recibida: ${consulta}`);
 
             const answer = await chat(promptConsultas, consulta); // ChatGPT responde
-            console.log(answer);
+            console.log("Respuesta de ChatGPT:", answer);
 
             if (!answer || !answer.content) {
                 console.log("No se obtuvo una respuesta válida de ChatGPT");
@@ -59,8 +62,10 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
             const rutaImagen = obtenerImagenCurso(answer.content);
 
             if (rutaImagen) {
+                console.log("Enviando mensaje con imagen...");
                 await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
             } else {
+                console.log("Enviando solo el contenido de texto...");
                 await ctxFn.flowDynamic(answer.content);
             }
         } catch (error) {
@@ -76,6 +81,7 @@ const main = async () => {
     const adapterProvider = createProvider(BaileysProvider);
 
     try {
+        console.log("Iniciando el bot...");
         await createBot({
             flow: adapterFlow,
             provider: adapterProvider,
