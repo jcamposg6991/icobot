@@ -43,44 +43,67 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         // Enviar saludo si el usuario es nuevo
         if (!usersWhoReceivedWelcome.has(userId)) {
             usersWhoReceivedWelcome.add(userId);
-            await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
+            return ctxFn.flowDynamic(saludo, { media: imagenSaludo }); // Asegúrate de devolver la promesa aquí
         }
 
         // Procesar la consulta del usuario
         const consulta = ctx.body.trim();
         console.log(consulta);
-        const answer = await chat(promptConsultas, consulta); // ChatGPT responde
-        console.log(answer);
-        
+        try {
+            const answer = await chat(promptConsultas, consulta); // ChatGPT responde
+            console.log(answer);
+            
+            // Buscar si la respuesta incluye una imagen
+            const rutaImagen = obtenerImagenCurso(answer.content);
 
-        // Buscar si la respuesta incluye una imagen
-        const rutaImagen = obtenerImagenCurso(answer.content);
-
-        if (rutaImagen) {
-            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
-        } else {
-            await ctxFn.flowDynamic(answer.content);
+            if (rutaImagen) {
+                return ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen }); // Asegúrate de devolver la promesa aquí
+            } else {
+                return ctxFn.flowDynamic(answer.content); // Asegúrate de devolver la promesa aquí
+            }
+        } catch (error) {
+            console.error('Error procesando la consulta:', error.message || error);
+            return ctxFn.flowDynamic("Lo siento, ocurrió un error al procesar tu consulta.");
         }
     });
 
 // Configuración principal del bot
 const main = async () => {
-    // const adapterDB = new MockAdapter();
-    const adapterDB = new MongoAdapter({
-        dbUri: process.env.MONGO_DB_URI, 
-        dbName: "IcoBot",
-    });
+    try {
+        // Comprobar si la URI de MongoDB está definida
+        if (!process.env.MONGO_DB_URI) {
+            throw new Error('MONGO_DB_URI no está definida.');
+        }
 
-    const adapterFlow = createFlow([flowConsultas]);
-    const adapterProvider = createProvider(BaileysProvider);
+        // Conexión a MongoDB sin esperar un método connect(), si MongoAdapter no lo requiere
+        const adapterDB = new MongoAdapter({
+            dbUri: process.env.MONGO_DB_URI,
+            dbName: "IcoBot",
+        });
 
-    createBot({
-        flow: adapterFlow,
-        provider: adapterProvider,
-        database: adapterDB,
-    });
+        // Inicialización del flujo y proveedor
+        const adapterFlow = createFlow([flowConsultas]);
+        const adapterProvider = createProvider(BaileysProvider);
 
-    QRPortalWeb();
+        // Creación del bot
+        createBot({
+            flow: adapterFlow,
+            provider: adapterProvider,
+            database: adapterDB,
+        });
+
+        // Portal QR
+        QRPortalWeb();
+    } catch (error) {
+        console.error('Error en la función main:', error.message || error);
+    }
 };
+
+// Manejo de promesas no gestionadas globalmente (para prevenir errores no capturados)
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+    // Aquí puedes optar por hacer algo con la razón del rechazo, como cerrar la aplicación o realizar un log detallado
+    // Es importante no dejar promesas rechazadas sin manejar.
+});
 
 main();
