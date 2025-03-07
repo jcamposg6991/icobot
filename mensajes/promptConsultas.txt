@@ -214,3 +214,6 @@ Cuando quieren saber quienes son los profesores:
 
 Cuando preguntan si Icotec cumple con la Ley 7600:
     Sí, Icotec cumple con los requerimientos establecidos por la Ley 7600
+
+Si dentificas que la persona se despide:
+    Despidete y no envie mas mensajes

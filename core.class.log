@@ -2,127 +2,10 @@
   key: {
     remoteJid: '50672718761@s.whatsapp.net',
     fromMe: false,
-    id: '3AA5D77025DA0BB3966E',
-    participant: undefined
-  },
-  messageTimestamp: 1741305300,
-  pushName: 'Jor69',
-  broadcast: false,
-  message: Message {
-    conversation: 'Hola',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Hola',
-  from: '50672718761'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2939afc4-2a58-44d6-9580-e2b15e9ab70a',
-  keyword: 'key_907926f1-9a2e-4912-a0b4-1ff21f501399',
-  answer: '*🤖IcoBot🤖*',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 1,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '012edaeb9fa89b780af23c24551191f0'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '50672718761@s.whatsapp.net',
-    fromMe: false,
-    id: '3A18467508871B02B2D1',
-    participant: undefined
-  },
-  messageTimestamp: 1741305313,
-  pushName: 'Jor69',
-  broadcast: false,
-  message: Message {
-    conversation: 'Que edad aceptan niños?',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Que edad aceptan niños?',
-  from: '50672718761'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2939afc4-2a58-44d6-9580-e2b15e9ab70a',
-  keyword: 'key_907926f1-9a2e-4912-a0b4-1ff21f501399',
-  answer: '*🤖IcoBot🤖*',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 1,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '012edaeb9fa89b780af23c24551191f0'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '50672718761@s.whatsapp.net',
-    fromMe: false,
-    id: '3A683E4CE393A57602B5',
-    participant: undefined
-  },
-  messageTimestamp: 1741305330,
-  pushName: 'Jor69',
-  broadcast: false,
-  message: Message {
-    conversation: 'Dan cursos a empresas?',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Dan cursos a empresas?',
-  from: '50672718761'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2939afc4-2a58-44d6-9580-e2b15e9ab70a',
-  keyword: 'key_907926f1-9a2e-4912-a0b4-1ff21f501399',
-  answer: '*🤖IcoBot🤖*',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 1,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '012edaeb9fa89b780af23c24551191f0'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '50672718761@s.whatsapp.net',
-    fromMe: false,
     id: '3A92C48F260C2C3DF197',
     participant: undefined
   },
-  messageTimestamp: 1741305500,
+  messageTimestamp: 1741306054,
   pushName: 'Jor69',
   broadcast: false,
   message: Message {
@@ -137,8 +20,8 @@
   from: '50672718761'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2939afc4-2a58-44d6-9580-e2b15e9ab70a',
-  keyword: 'key_907926f1-9a2e-4912-a0b4-1ff21f501399',
+  ref: 'ans_3f3bfc7e-7921-4838-b5ab-c278f6b6055c',
+  keyword: 'key_8353d9a9-af9c-40d4-8421-7297d2a6bb40',
   answer: '*🤖IcoBot🤖*',
   options: {
     media: null,
@@ -152,5 +35,161 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '012edaeb9fa89b780af23c24551191f0'
+  refSerialize: '468a49760874a9f1bd1acf749cda7c30'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '50672718761@s.whatsapp.net',
+    fromMe: false,
+    id: '3A237FDE7CB64297FDA7',
+    participant: undefined
+  },
+  messageTimestamp: 1741306077,
+  pushName: 'Jor69',
+  broadcast: false,
+  message: Message {
+    conversation: 'Podrían darme información de cursos?',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Podrían darme información de cursos?',
+  from: '50672718761'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_3f3bfc7e-7921-4838-b5ab-c278f6b6055c',
+  keyword: 'key_8353d9a9-af9c-40d4-8421-7297d2a6bb40',
+  answer: '*🤖IcoBot🤖*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '468a49760874a9f1bd1acf749cda7c30'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '50672718761@s.whatsapp.net',
+    fromMe: false,
+    id: '3A24D01B191EB02E20D7',
+    participant: undefined
+  },
+  messageTimestamp: 1741306084,
+  pushName: 'Jor69',
+  broadcast: false,
+  message: Message {
+    conversation: 'Contabilidad',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Contabilidad',
+  from: '50672718761'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_3f3bfc7e-7921-4838-b5ab-c278f6b6055c',
+  keyword: 'key_8353d9a9-af9c-40d4-8421-7297d2a6bb40',
+  answer: '*🤖IcoBot🤖*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '468a49760874a9f1bd1acf749cda7c30'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '50672718761@s.whatsapp.net',
+    fromMe: false,
+    id: '3ACB3259306D63E13715',
+    participant: undefined
+  },
+  messageTimestamp: 1741306106,
+  pushName: 'Jor69',
+  broadcast: false,
+  message: Message {
+    conversation: 'Esa era mi consulta gracias!',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Esa era mi consulta gracias!',
+  from: '50672718761'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_3f3bfc7e-7921-4838-b5ab-c278f6b6055c',
+  keyword: 'key_8353d9a9-af9c-40d4-8421-7297d2a6bb40',
+  answer: '*🤖IcoBot🤖*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '468a49760874a9f1bd1acf749cda7c30'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '50672718761@s.whatsapp.net',
+    fromMe: false,
+    id: '3ADEDAE4899882BC8F01',
+    participant: undefined
+  },
+  messageTimestamp: 1741306122,
+  pushName: 'Jor69',
+  broadcast: false,
+  message: Message {
+    conversation: 'Ya no ocupo nada gracias',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Ya no ocupo nada gracias',
+  from: '50672718761'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_3f3bfc7e-7921-4838-b5ab-c278f6b6055c',
+  keyword: 'key_8353d9a9-af9c-40d4-8421-7297d2a6bb40',
+  answer: '*🤖IcoBot🤖*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '468a49760874a9f1bd1acf749cda7c30'
 }
