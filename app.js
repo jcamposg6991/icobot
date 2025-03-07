@@ -3,8 +3,8 @@ require("dotenv").config();
 
 const QRPortalWeb = require('@bot-whatsapp/portal');
 const BaileysProvider = require('@bot-whatsapp/provider/baileys');
-const MongoAdapter = require('@bot-whatsapp/database/mongo');
-// const MockAdapter= require('@bot-whatsapp/database/json');
+//const MongoAdapter = require('@bot-whatsapp/database/mongo');
+const MockAdapter= require('@bot-whatsapp/database/json');
 const path = require("path");
 const fs = require("fs");
 const chat = require("./chatGPT");
@@ -65,11 +65,11 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
 
 // Configuración principal del bot
 const main = async () => {
-    // const adapterDB = new MockAdapter();
-    const adapterDB = new MongoAdapter({
-        dbUri: process.env.MONGO_DB_URI, 
-        dbName: "IcoBot",
-    });
+    const adapterDB = new MockAdapter();
+    // const adapterDB = new MongoAdapter({
+    //     dbUri: process.env.MONGO_DB_URI, 
+    //     dbName: "IcoBot",
+    // });
 
     const adapterFlow = createFlow([flowConsultas]);
     const adapterProvider = createProvider(BaileysProvider);
