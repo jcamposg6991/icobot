@@ -1,15 +1,15 @@
 [
   {
-    "ref": "22965266-51b5-4f5d-888f-44c31d5f51de",
-    "keyword": "5b65e45a6b1d244ac020989d41301ffc",
+    "ref": "1441ee95-381f-4a67-a05c-1d40da6d4e4b",
+    "keyword": "868593578d48e8dcf66f4bde071b2b80",
     "answer": "Hola",
     "options": {},
     "from": "50672718761",
     "refSerialize": "c22e4066d61d81721def9b25d8a397e8"
   },
   {
-    "ref": "ans_c5700f48-4661-4981-b0f8-3874ff66415a",
-    "keyword": "key_9d128cf2-d08c-4c80-9311-7ca6ba6ff190",
+    "ref": "ans_917b3a70-c094-492f-a5e5-799d0cbe2f54",
+    "keyword": "key_c9a06a00-5efe-4b53-b8d2-710bed432e3d",
     "answer": "*🤖IcoBot🤖*",
     "options": {
       "media": null,
@@ -23,11 +23,11 @@
       "keyword": {},
       "callback": true
     },
-    "refSerialize": "1a1fcf5f7a5ecd234fce99f3da49f840",
+    "refSerialize": "d716707f33e0dd4095fd5896e5fe1827",
     "from": "50672718761"
   },
   {
-    "ref": "410323fd-731c-46f0-bae8-501ea75aff43",
+    "ref": "1f894115-2e25-4e51-9715-234a15ca5220",
     "keyword": null,
     "answer": "Somos ICOTEC, un instituto que se dedica a la educación técnica y cursos libres de gran calidad a bajo costo, con más de 20 años en el mercado costarricense. Estamos afiliados a CANAEP (Cámara Nacional de Educación Privada) y al INA (Inglés).\r\n",
     "options": {

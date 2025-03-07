@@ -3,12 +3,11 @@ require("dotenv").config();
 
 const QRPortalWeb = require('@bot-whatsapp/portal');
 const BaileysProvider = require('@bot-whatsapp/provider/baileys');
-//const MongoAdapter = require('@bot-whatsapp/database/mongo');
-const MockAdapter= require('@bot-whatsapp/database/json');
+const MongoAdapter = require('@bot-whatsapp/database/mongo');
+// const MockAdapter= require('@bot-whatsapp/database/json'); //en caso de levantar sin conexion a Mongo se debe activar esta linea
 const path = require("path");
 const fs = require("fs");
 const chat = require("./chatGPT");
-const { log } = require('console');
 
 // Cargar textos y prompts desde archivos
 const pathConsultas = path.join(__dirname, "mensajes", "promptConsultas.txt");
@@ -20,58 +19,35 @@ const saludo = fs.readFileSync(pathSaludo, "utf8");
 const imagenSaludo = path.join(__dirname, "imagenes", "saludo.jpg");
 
 // Almacenamiento temporal para rastrear usuarios que ya pasaron por el flujo de bienvenida
-const usersWhoReceivedWelcome = new Set(); 
+const usersWhoReceivedWelcome = new Set(); // Usamos un Set para almacenar los IDs únicos de usuarios
 
-// Función para verificar si la respuesta contiene una referencia a una imagen
-const obtenerImagenCurso = (respuestaTexto) => {
-    const matchImagen = respuestaTexto.match(/Imagen:\s*(.*)/); // Busca "Imagen: nombre.jpg"
-    if (matchImagen) {
-        const rutaImagen = path.resolve(__dirname, "imagenes", matchImagen[1].trim());
-        if (fs.existsSync(rutaImagen)) {
-            console.log(rutaImagen);
-            return rutaImagen; 
-        }
-    }
-    return null;
-};
-
-// Flujo dinámico para manejar consultas generales (cursos u otros temas)
+// Flujo dinámico para manejar consultas y el saludo inicial
 const flowConsultas = addKeyword([EVENTS.MESSAGE])
     .addAnswer("*🤖IcoBot🤖*", { delay: 1 }, async (ctx, ctxFn) => {
-        const userId = ctx.from; 
+        const userId = ctx.from; // Obtenemos el ID del usuario
 
-        // Enviar saludo si el usuario es nuevo
+        // Si el usuario no ha recibido el saludo, enviarlo primero
         if (!usersWhoReceivedWelcome.has(userId)) {
-            usersWhoReceivedWelcome.add(userId);
-            await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
+            usersWhoReceivedWelcome.add(userId); // Marcamos que este usuario ya recibió el saludo
+            await ctxFn.flowDynamic(saludo,{media: imagenSaludo}); // Enviamos el saludo inicial
         }
 
-        // Procesar la consulta del usuario
-        const consulta = ctx.body.trim();
-        console.log(consulta);
-        const answer = await chat(promptConsultas, consulta); // ChatGPT responde
-        console.log(answer);
-        
-
-        // Buscar si la respuesta incluye una imagen
-        const rutaImagen = obtenerImagenCurso(answer.content);
-
-        if (rutaImagen) {
-            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
-        } else {
-            await ctxFn.flowDynamic(answer.content);
-        }
+        // Ahora manejamos la consulta del usuario
+        const prompt = promptConsultas;
+        const consulta = ctx.body; // Captura el mensaje del usuario
+        const answer = await chat(prompt, consulta); // Responde usando lógica externa (ChatGPT u otra)
+        await ctxFn.flowDynamic(answer.content); // Responde dinámicamente
     });
 
 // Configuración principal del bot
 const main = async () => {
-    const adapterDB = new MockAdapter();
-    // const adapterDB = new MongoAdapter({
-    //     dbUri: process.env.MONGO_DB_URI, 
-    //     dbName: "IcoBot",
-    // });
+    const adapterDB = new MongoAdapter({
+       dbUri: process.env.MONGO_DB_URI, // Configura tu conexión en el archivo .env - En caso se levantar sin conexion a Mongo se debe inacticar este bloque
+       dbName: "IcoBot",
+   });
 
-    const adapterFlow = createFlow([flowConsultas]);
+    // const adapterDB = new MockAdapter(); //en caso de levantar sin conexion a Mongo se debe activar esta linea
+    const adapterFlow = createFlow([flowConsultas]); // Solo necesitamos el flujo de consultas
     const adapterProvider = createProvider(BaileysProvider);
 
     createBot({
@@ -80,7 +56,7 @@ const main = async () => {
         database: adapterDB,
     });
 
-    QRPortalWeb();
+    QRPortalWeb(); // Genera el código QR para conectarte a WhatsApp
 };
 
 main();
