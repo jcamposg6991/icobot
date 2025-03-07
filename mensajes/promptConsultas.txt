@@ -217,3 +217,12 @@ Cuando preguntan si Icotec cumple con la Ley 7600:
 
 Si dentificas que la persona se despide:
     Despidete y no envie mas mensajes
+
+Cursos que no se imparten en Icotec:
+    Barberia
+    Peluqueria
+    Estilismo
+    Estetica
+    Tecnico en Farmacia
+    Uñas
+

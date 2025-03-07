@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "ref": "22965266-51b5-4f5d-888f-44c31d5f51de",
+    "keyword": "5b65e45a6b1d244ac020989d41301ffc",
+    "answer": "Hola",
+    "options": {},
+    "from": "50672718761",
+    "refSerialize": "c22e4066d61d81721def9b25d8a397e8"
+  },
+  {
+    "ref": "ans_c5700f48-4661-4981-b0f8-3874ff66415a",
+    "keyword": "key_9d128cf2-d08c-4c80-9311-7ca6ba6ff190",
+    "answer": "*🤖IcoBot🤖*",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "child": null,
+      "delay": 1,
+      "idle": null,
+      "ref": null,
+      "nested": [],
+      "keyword": {},
+      "callback": true
+    },
+    "refSerialize": "1a1fcf5f7a5ecd234fce99f3da49f840",
+    "from": "50672718761"
+  },
+  {
+    "ref": "410323fd-731c-46f0-bae8-501ea75aff43",
+    "keyword": null,
+    "answer": "Somos ICOTEC, un instituto que se dedica a la educación técnica y cursos libres de gran calidad a bajo costo, con más de 20 años en el mercado costarricense. Estamos afiliados a CANAEP (Cámara Nacional de Educación Privada) y al INA (Inglés).\r\n",
+    "options": {
+      "media": "C:\\Users\\jonas\\Escritorio\\IcoBot\\imagenes\\saludo.jpg",
+      "buttons": [],
+      "capture": false,
+      "delay": 0
+    },
+    "from": "50672718761",
+    "refSerialize": "80be600b18f19917962c07a822c11ea9"
+  }
+]
