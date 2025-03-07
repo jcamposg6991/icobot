@@ -2,10 +2,10 @@
   key: {
     remoteJid: '50672718761@s.whatsapp.net',
     fromMe: false,
-    id: '3A92C48F260C2C3DF197',
+    id: '3AFF094DEEE430D0AB2F',
     participant: undefined
   },
-  messageTimestamp: 1741306054,
+  messageTimestamp: 1741306213,
   pushName: 'Jor69',
   broadcast: false,
   message: Message {
@@ -20,8 +20,8 @@
   from: '50672718761'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_3f3bfc7e-7921-4838-b5ab-c278f6b6055c',
-  keyword: 'key_8353d9a9-af9c-40d4-8421-7297d2a6bb40',
+  ref: 'ans_ffe63b69-c0f7-4fdb-b3a0-9b0798238a48',
+  keyword: 'key_89df79b3-b733-4b06-b3cf-72f06390cd90',
   answer: '*🤖IcoBot🤖*',
   options: {
     media: null,
@@ -35,32 +35,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '468a49760874a9f1bd1acf749cda7c30'
+  refSerialize: 'bfb7fa3b167c3db3a3921285c960f9b2'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '50672718761@s.whatsapp.net',
     fromMe: false,
-    id: '3A237FDE7CB64297FDA7',
+    id: '3A3FC8ECD586A47EA9F1',
     participant: undefined
   },
-  messageTimestamp: 1741306077,
+  messageTimestamp: 1741306234,
   pushName: 'Jor69',
   broadcast: false,
   message: Message {
-    conversation: 'Podrían darme información de cursos?',
+    conversation: 'Donde estan ubicados?',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Podrían darme información de cursos?',
+  body: 'Donde estan ubicados?',
   from: '50672718761'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_3f3bfc7e-7921-4838-b5ab-c278f6b6055c',
-  keyword: 'key_8353d9a9-af9c-40d4-8421-7297d2a6bb40',
+  ref: 'ans_ffe63b69-c0f7-4fdb-b3a0-9b0798238a48',
+  keyword: 'key_89df79b3-b733-4b06-b3cf-72f06390cd90',
   answer: '*🤖IcoBot🤖*',
   options: {
     media: null,
@@ -74,32 +74,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '468a49760874a9f1bd1acf749cda7c30'
+  refSerialize: 'bfb7fa3b167c3db3a3921285c960f9b2'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '50672718761@s.whatsapp.net',
     fromMe: false,
-    id: '3A24D01B191EB02E20D7',
+    id: '3AC3E8695F82EF354B05',
     participant: undefined
   },
-  messageTimestamp: 1741306084,
+  messageTimestamp: 1741306253,
   pushName: 'Jor69',
   broadcast: false,
   message: Message {
-    conversation: 'Contabilidad',
+    conversation: 'Esa era mi consulta, gracias!',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Contabilidad',
+  body: 'Esa era mi consulta, gracias!',
   from: '50672718761'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_3f3bfc7e-7921-4838-b5ab-c278f6b6055c',
-  keyword: 'key_8353d9a9-af9c-40d4-8421-7297d2a6bb40',
+  ref: 'ans_ffe63b69-c0f7-4fdb-b3a0-9b0798238a48',
+  keyword: 'key_89df79b3-b733-4b06-b3cf-72f06390cd90',
   answer: '*🤖IcoBot🤖*',
   options: {
     media: null,
@@ -113,83 +113,5 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '468a49760874a9f1bd1acf749cda7c30'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '50672718761@s.whatsapp.net',
-    fromMe: false,
-    id: '3ACB3259306D63E13715',
-    participant: undefined
-  },
-  messageTimestamp: 1741306106,
-  pushName: 'Jor69',
-  broadcast: false,
-  message: Message {
-    conversation: 'Esa era mi consulta gracias!',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Esa era mi consulta gracias!',
-  from: '50672718761'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_3f3bfc7e-7921-4838-b5ab-c278f6b6055c',
-  keyword: 'key_8353d9a9-af9c-40d4-8421-7297d2a6bb40',
-  answer: '*🤖IcoBot🤖*',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 1,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '468a49760874a9f1bd1acf749cda7c30'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '50672718761@s.whatsapp.net',
-    fromMe: false,
-    id: '3ADEDAE4899882BC8F01',
-    participant: undefined
-  },
-  messageTimestamp: 1741306122,
-  pushName: 'Jor69',
-  broadcast: false,
-  message: Message {
-    conversation: 'Ya no ocupo nada gracias',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Ya no ocupo nada gracias',
-  from: '50672718761'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_3f3bfc7e-7921-4838-b5ab-c278f6b6055c',
-  keyword: 'key_8353d9a9-af9c-40d4-8421-7297d2a6bb40',
-  answer: '*🤖IcoBot🤖*',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 1,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '468a49760874a9f1bd1acf749cda7c30'
+  refSerialize: 'bfb7fa3b167c3db3a3921285c960f9b2'
 }
