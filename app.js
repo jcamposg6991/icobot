@@ -29,7 +29,7 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         // Si el usuario no ha recibido el saludo, enviarlo primero
         if (!usersWhoReceivedWelcome.has(userId)) {
             usersWhoReceivedWelcome.add(userId); // Marcamos que este usuario ya recibió el saludo
-            await ctxFn.flowDynamic(saludo,{media: imagenSaludo}); // Enviamos el saludo inicial
+            await ctxFn.flowDynamic(saludo); // Enviamos el saludo inicial
         }
 
         // Ahora manejamos la consulta del usuario
