@@ -1,0 +1,156 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '50672718761@s.whatsapp.net',
+    fromMe: false,
+    id: '3AA5D77025DA0BB3966E',
+    participant: undefined
+  },
+  messageTimestamp: 1741305300,
+  pushName: 'Jor69',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Hola',
+  from: '50672718761'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_2939afc4-2a58-44d6-9580-e2b15e9ab70a',
+  keyword: 'key_907926f1-9a2e-4912-a0b4-1ff21f501399',
+  answer: '*🤖IcoBot🤖*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '012edaeb9fa89b780af23c24551191f0'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '50672718761@s.whatsapp.net',
+    fromMe: false,
+    id: '3A18467508871B02B2D1',
+    participant: undefined
+  },
+  messageTimestamp: 1741305313,
+  pushName: 'Jor69',
+  broadcast: false,
+  message: Message {
+    conversation: 'Que edad aceptan niños?',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Que edad aceptan niños?',
+  from: '50672718761'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_2939afc4-2a58-44d6-9580-e2b15e9ab70a',
+  keyword: 'key_907926f1-9a2e-4912-a0b4-1ff21f501399',
+  answer: '*🤖IcoBot🤖*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '012edaeb9fa89b780af23c24551191f0'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '50672718761@s.whatsapp.net',
+    fromMe: false,
+    id: '3A683E4CE393A57602B5',
+    participant: undefined
+  },
+  messageTimestamp: 1741305330,
+  pushName: 'Jor69',
+  broadcast: false,
+  message: Message {
+    conversation: 'Dan cursos a empresas?',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Dan cursos a empresas?',
+  from: '50672718761'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_2939afc4-2a58-44d6-9580-e2b15e9ab70a',
+  keyword: 'key_907926f1-9a2e-4912-a0b4-1ff21f501399',
+  answer: '*🤖IcoBot🤖*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '012edaeb9fa89b780af23c24551191f0'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '50672718761@s.whatsapp.net',
+    fromMe: false,
+    id: '3A92C48F260C2C3DF197',
+    participant: undefined
+  },
+  messageTimestamp: 1741305500,
+  pushName: 'Jor69',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Hola',
+  from: '50672718761'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_2939afc4-2a58-44d6-9580-e2b15e9ab70a',
+  keyword: 'key_907926f1-9a2e-4912-a0b4-1ff21f501399',
+  answer: '*🤖IcoBot🤖*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '012edaeb9fa89b780af23c24551191f0'
+}
