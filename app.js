@@ -6,8 +6,6 @@ const BaileysProvider = require('@bot-whatsapp/provider/baileys');
 const MongoAdapter = require('@bot-whatsapp/database/mongo');
 const path = require("path");
 const fs = require("fs");
-const express = require('express');
-const app = express();
 const chat = require("./chatGPT");
 
 // Cargar textos y prompts desde archivos
@@ -16,7 +14,7 @@ const promptConsultas = fs.readFileSync(pathConsultas, "utf8");
 
 const pathSaludo = path.join(__dirname, "mensajes", "saludo.txt");
 const saludo = fs.readFileSync(pathSaludo, "utf8");
-const imagenSaludo = 'https://icobot-production.up.railway.app/public/img/saludo.jpg'; // URL pública de la imagen
+const imagenSaludo = path.join(__dirname, "public/img", "saludo.jpg");
 
 const despedida = "Tu sesión de chat ha finalizado debido a inactividad. Si necesitas más ayuda, no dudes en iniciar un nuevo chat. ¡Estamos aquí para ayudarte!";
 
@@ -58,9 +56,6 @@ const obtenerImagenCurso = (respuestaTexto) => {
     return null;
 };
 
-// Servir archivos estáticos desde la carpeta 'public'
-app.use('/public', express.static(path.join(__dirname, 'public')));
-
 // Flujo dinámico para manejar consultas generales
 const flowConsultas = addKeyword([EVENTS.MESSAGE])
     .addAnswer("*🤖IcoBot🤖*", { delay: 1 }, async (ctx, ctxFn) => {
@@ -97,11 +92,6 @@ const main = async () => {
         flow: adapterFlow,
         provider: global.provider,
         database: adapterDB,
-    });
-
-    // Iniciar servidor Express
-    app.listen(process.env.PORT || 3000, () => {
-        console.log("Servidor Express en puerto " + (process.env.PORT || 3000));
     });
 
     QRPortalWeb();
