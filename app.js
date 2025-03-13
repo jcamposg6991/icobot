@@ -78,8 +78,8 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
 
         if (!usersWhoReceivedWelcome.has(userId)) {
             usersWhoReceivedWelcome.add(userId);
-            const imagenURL = `file://${imagenSaludo}`;
-            await ctxFn.flowDynamic(saludo, { media: imagenURL });
+            console.log("📷 Enviando imagen desde:", imagenSaludo);
+            await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
         }
 
         const consulta = ctx.body.trim();
