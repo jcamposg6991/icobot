@@ -1,4 +1,5 @@
 const { createBot, createProvider, createFlow, addKeyword, EVENTS } = require('@bot-whatsapp/bot');
+const cloudinary = require('cloudinary').v2;
 require("dotenv").config();
 
 const QRPortalWeb = require('@bot-whatsapp/portal');
@@ -8,51 +9,20 @@ const path = require("path");
 const fs = require("fs");
 const chat = require("./chatGPT");
 
+// Configurar Cloudinary con las credenciales del .env
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
 // Cargar textos y prompts desde archivos
 const pathConsultas = path.join(__dirname, "mensajes", "promptConsultas.txt");
 const promptConsultas = fs.readFileSync(pathConsultas, "utf8");
 
 const pathSaludo = path.join(__dirname, "mensajes", "saludo.txt");
 const saludo = fs.readFileSync(pathSaludo, "utf8");
-const imagenSaludo = path.join(__dirname, "public/img", "saludo.jpg");
-
-// Crear el directorio si no existe
-const dirImagenes = path.dirname(imagenSaludo);
-if (!fs.existsSync(dirImagenes)) {
-    fs.mkdirSync(dirImagenes, { recursive: true });
-    console.log(`Directorio creado: ${dirImagenes}`);
-}
-
-// Verificar si la imagen existe
-if (fs.existsSync(imagenSaludo)) {
-    console.log("✅ La imagen de saludo existe en:", imagenSaludo);
-} else {
-    console.error("❌ ERROR: La imagen de saludo NO existe en:", imagenSaludo);
-}
-
-//Verificar si Railway bloquea archivos locales
-const existeImagen = fs.existsSync(imagenSaludo);
-console.log(`✅ La imagen ${existeImagen ? "SÍ" : "NO"} existe en: ${imagenSaludo}`);
-
-if (existeImagen) {
-    try {
-        const stats = fs.statSync(imagenSaludo);
-        console.log(`📏 Tamaño: ${stats.size} bytes`);
-    } catch (err) {
-        console.error("❌ Error obteniendo info de la imagen:", err);
-    }
-}
-
-// Convertir imagen a Base64
-const obtenerImagenBase64 = (ruta) => {
-    try {
-        const imagen = fs.readFileSync(ruta);
-        return `data:image/jpeg;base64,${imagen.toString("base64")}`;
-    } catch (err) {
-        console.error("❌ Error convirtiendo imagen a Base64:", err);
-        return null;
-    }
-};
+const imagenSaludo = "https://res.cloudinary.com/drkiaah01/image/upload/v1741850033/saludo_kgkv9m.jpg"
 
 const despedida = "Tu sesión de chat ha finalizado debido a inactividad. Si necesitas más ayuda, no dudes en iniciar un nuevo chat. ¡Estamos aquí para ayudarte!";
 
@@ -88,7 +58,7 @@ const obtenerImagenCurso = (respuestaTexto) => {
     if (matchImagen) {
         const rutaImagen = path.join(__dirname, "public/img", matchImagen[1].trim());
         if (fs.existsSync(rutaImagen)) {
-            return obtenerImagenBase64(rutaImagen);
+            return rutaImagen;
         }
     }
     return null;
@@ -102,22 +72,15 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
 
         if (!usersWhoReceivedWelcome.has(userId)) {
             usersWhoReceivedWelcome.add(userId);
-            console.log("📷 Enviando imagen desde:", imagenSaludo);
-            const imagenBase64 = obtenerImagenBase64(imagenSaludo);
-            if (imagenBase64) {
-                await ctxFn.flowDynamic(saludo, { media: imagenBase64 })
-                .catch((error) => console.error("❌ Error enviando la imagen:", error));
-            } else {
-                await ctxFn.flowDynamic(saludo);
-            }
+            await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
         }
 
         const consulta = ctx.body.trim();
         const answer = await chat(promptConsultas, consulta);
-        const imagenCurso = obtenerImagenCurso(answer.content);
+        const rutaImagen = obtenerImagenCurso(answer.content);
 
-        if (imagenCurso) {
-            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: imagenCurso });
+        if (rutaImagen) {
+            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
         } else {
             await ctxFn.flowDynamic(answer.content);
         }
