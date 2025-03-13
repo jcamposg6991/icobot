@@ -80,7 +80,7 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
             usersWhoReceivedWelcome.add(userId);
             console.log("📷 Enviando imagen desde:", imagenSaludo);
             await ctxFn
-            .flowDynamic(saludo, { media: imagenSaludo });
+            .flowDynamic(saludo, { media: imagenSaludo })
             .catch((error) => console.error("❌ Error enviando la imagen:", error));
         }
 
