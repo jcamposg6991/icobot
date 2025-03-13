@@ -2,27 +2,27 @@
   key: {
     remoteJid: '50672718761@s.whatsapp.net',
     fromMe: false,
-    id: '3A44BACB96C63A292A6B',
+    id: '3EB090B117AB5695585869',
     participant: undefined
   },
-  messageTimestamp: 1741825595,
+  messageTimestamp: 1741829289,
   pushName: 'Jor69',
   broadcast: false,
   message: Message {
-    conversation: 'Hola',
+    conversation: 'HOLA',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Hola',
+  body: 'HOLA',
   from: '50672718761'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_17225ece-4799-4366-9fe7-188af1ba745f',
-  keyword: 'key_2507784a-6180-48df-b86a-cb5069e7d1c9',
-  answer: '*IcoBot*',
+  ref: 'ans_2466f33c-1c53-495f-b1ab-cebb6546a9f1',
+  keyword: 'key_d50d25e0-32cc-476a-ac98-c6bbd6600a65',
+  answer: '*🤖IcoBot🤖*',
   options: {
     media: null,
     buttons: [],
@@ -35,5 +35,83 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '12d58323715400baea7216099e6d8df3'
+  refSerialize: '509052188ec14ef544bdc6f10738ea42'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '50672718761@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB0CBC27A35CCA02B4740',
+    participant: undefined
+  },
+  messageTimestamp: 1741829296,
+  pushName: 'Jor69',
+  broadcast: false,
+  message: Message {
+    conversation: 'Me gustaría info de contabilidad',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Me gustaría info de contabilidad',
+  from: '50672718761'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_2466f33c-1c53-495f-b1ab-cebb6546a9f1',
+  keyword: 'key_d50d25e0-32cc-476a-ac98-c6bbd6600a65',
+  answer: '*🤖IcoBot🤖*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '509052188ec14ef544bdc6f10738ea42'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '50672718761@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB00C1B7C2BB9D10EB690',
+    participant: undefined
+  },
+  messageTimestamp: 1741829310,
+  pushName: 'Jor69',
+  broadcast: false,
+  message: Message {
+    conversation: 'Me gustaría info de PORTU',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Me gustaría info de PORTU',
+  from: '50672718761'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_2466f33c-1c53-495f-b1ab-cebb6546a9f1',
+  keyword: 'key_d50d25e0-32cc-476a-ac98-c6bbd6600a65',
+  answer: '*🤖IcoBot🤖*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '509052188ec14ef544bdc6f10738ea42'
 }

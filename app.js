@@ -14,7 +14,7 @@ const promptConsultas = fs.readFileSync(pathConsultas, "utf8");
 
 const pathSaludo = path.join(__dirname, "mensajes", "saludo.txt");
 const saludo = fs.readFileSync(pathSaludo, "utf8");
-const imagenSaludo = path.join(__dirname, "imagenes", "saludo.jpg");
+const imagenSaludo = path.join(__dirname, "public/img", "saludo.jpg");
 
 const despedida = "Tu sesión de chat ha finalizado debido a inactividad. Si necesitas más ayuda, no dudes en iniciar un nuevo chat. ¡Estamos aquí para ayudarte!";
 
@@ -25,7 +25,7 @@ const userActivity = new Map();
 const checkInactiveUsers = async () => {
     const now = Date.now();
     for (const [userId, lastActive] of userActivity.entries()) {
-        if (now - lastActive > 1 * 60 * 1000) { // 10 minutos
+        if (now - lastActive > 1 * 60 * 1000) {
             console.log(`Enviando mensaje de despedida a ${userId}`);
 
             if (global.provider) {
@@ -42,11 +42,23 @@ const checkInactiveUsers = async () => {
         }
     }
 };
-setInterval(checkInactiveUsers, 60 * 1000); // Verificar cada minuto
+setInterval(checkInactiveUsers, 60 * 1000);
+
+// Función para verificar si la respuesta contiene una referencia a una imagen
+const obtenerImagenCurso = (respuestaTexto) => {
+    const matchImagen = respuestaTexto.match(/Imagen:\s*(.*)/);
+    if (matchImagen) {
+        const rutaImagen = path.join(__dirname, "public/img", matchImagen[1].trim());
+        if (fs.existsSync(rutaImagen)) {
+            return rutaImagen;
+        }
+    }
+    return null;
+};
 
 // Flujo dinámico para manejar consultas generales
 const flowConsultas = addKeyword([EVENTS.MESSAGE])
-    .addAnswer("*IcoBot*", { delay: 1 }, async (ctx, ctxFn) => {
+    .addAnswer("*🤖IcoBot🤖*", { delay: 1 }, async (ctx, ctxFn) => {
         const userId = ctx.from;
         userActivity.set(userId, Date.now());
 
@@ -57,8 +69,13 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
 
         const consulta = ctx.body.trim();
         const answer = await chat(promptConsultas, consulta);
+        const rutaImagen = obtenerImagenCurso(answer.content);
 
-        await ctxFn.flowDynamic(answer.content);
+        if (rutaImagen) {
+            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
+        } else {
+            await ctxFn.flowDynamic(answer.content);
+        }
     });
 
 // Configuración principal del bot
