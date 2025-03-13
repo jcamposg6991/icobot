@@ -78,7 +78,8 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
 
         if (!usersWhoReceivedWelcome.has(userId)) {
             usersWhoReceivedWelcome.add(userId);
-            await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
+            const imagenURL = `file://${imagenSaludo}`;
+            await ctxFn.flowDynamic(saludo, { media: imagenURL });
         }
 
         const consulta = ctx.body.trim();
