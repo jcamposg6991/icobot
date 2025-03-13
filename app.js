@@ -52,16 +52,25 @@ const checkInactiveUsers = async () => {
 };
 setInterval(checkInactiveUsers, 60 * 1000);
 
-// Función para verificar si la respuesta contiene una referencia a una imagen
+// Función para verificar si la respuesta contiene una referencia a una imagen en Cloudinary
 const obtenerImagenCurso = (respuestaTexto) => {
     const matchImagen = respuestaTexto.match(/Imagen:\s*(.*)/);
     if (matchImagen) {
-        const rutaImagen = path.join(__dirname, "public/img", matchImagen[1].trim());
-        if (fs.existsSync(rutaImagen)) {
-            return rutaImagen;
-        }
+        const nombreImagen = matchImagen[1].trim();
+        
+        // Consulta a Cloudinary si la imagen existe
+        cloudinary.api.resources_by_tag(nombreImagen, (error, result) => {
+            if (error) {
+                console.error('Error al consultar Cloudinary:', error);
+                return null;
+            }
+            if (result.resources && result.resources.length > 0) {
+                // Si la imagen se encuentra en Cloudinary, devuelve la URL
+                return result.resources[0].secure_url;
+            }
+        });
     }
-    return null;
+    return null; // Si no se encuentra ninguna imagen
 };
 
 // Flujo dinámico para manejar consultas generales
