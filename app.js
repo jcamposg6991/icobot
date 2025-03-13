@@ -16,14 +16,18 @@ const pathSaludo = path.join(__dirname, "mensajes", "saludo.txt");
 const saludo = fs.readFileSync(pathSaludo, "utf8");
 const imagenSaludo = path.join(__dirname, "public/img", "saludo.jpg");
 
-// Verificar si la ruta es correcta
-console.log("Ruta de la imagen de saludo:", imagenSaludo);
+// Crear el directorio si no existe
+const dirImagenes = path.dirname(imagenSaludo);
+if (!fs.existsSync(dirImagenes)) {
+    fs.mkdirSync(dirImagenes, { recursive: true });
+    console.log(`Directorio creado: ${dirImagenes}`);
+}
 
-// Verificar si el archivo existe
+// Verificar si la imagen existe
 if (fs.existsSync(imagenSaludo)) {
-    console.log("La imagen de saludo existe.");
+    console.log("✅ La imagen de saludo existe en:", imagenSaludo);
 } else {
-    console.log("La imagen de saludo NO existe.");
+    console.error("❌ ERROR: La imagen de saludo NO existe en:", imagenSaludo);
 }
 
 const despedida = "Tu sesión de chat ha finalizado debido a inactividad. Si necesitas más ayuda, no dudes en iniciar un nuevo chat. ¡Estamos aquí para ayudarte!";
