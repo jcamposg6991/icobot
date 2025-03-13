@@ -43,6 +43,17 @@ if (existeImagen) {
     }
 }
 
+// Convertir imagen a Base64
+const obtenerImagenBase64 = (ruta) => {
+    try {
+        const imagen = fs.readFileSync(ruta);
+        return `data:image/jpeg;base64,${imagen.toString("base64")}`;
+    } catch (err) {
+        console.error("❌ Error convirtiendo imagen a Base64:", err);
+        return null;
+    }
+};
+
 const despedida = "Tu sesión de chat ha finalizado debido a inactividad. Si necesitas más ayuda, no dudes en iniciar un nuevo chat. ¡Estamos aquí para ayudarte!";
 
 // Almacenamiento temporal para rastrear usuarios y tiempos de actividad
@@ -77,7 +88,7 @@ const obtenerImagenCurso = (respuestaTexto) => {
     if (matchImagen) {
         const rutaImagen = path.join(__dirname, "public/img", matchImagen[1].trim());
         if (fs.existsSync(rutaImagen)) {
-            return rutaImagen;
+            return obtenerImagenBase64(rutaImagen);
         }
     }
     return null;
@@ -92,17 +103,21 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         if (!usersWhoReceivedWelcome.has(userId)) {
             usersWhoReceivedWelcome.add(userId);
             console.log("📷 Enviando imagen desde:", imagenSaludo);
-            await ctxFn
-            .flowDynamic(saludo, { media: imagenSaludo })
-            .catch((error) => console.error("❌ Error enviando la imagen:", error));
+            const imagenBase64 = obtenerImagenBase64(imagenSaludo);
+            if (imagenBase64) {
+                await ctxFn.flowDynamic(saludo, { media: imagenBase64 })
+                .catch((error) => console.error("❌ Error enviando la imagen:", error));
+            } else {
+                await ctxFn.flowDynamic(saludo);
+            }
         }
 
         const consulta = ctx.body.trim();
         const answer = await chat(promptConsultas, consulta);
-        const rutaImagen = obtenerImagenCurso(answer.content);
+        const imagenCurso = obtenerImagenCurso(answer.content);
 
-        if (rutaImagen) {
-            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
+        if (imagenCurso) {
+            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: imagenCurso });
         } else {
             await ctxFn.flowDynamic(answer.content);
         }
