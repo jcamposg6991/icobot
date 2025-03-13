@@ -30,6 +30,19 @@ if (fs.existsSync(imagenSaludo)) {
     console.error("❌ ERROR: La imagen de saludo NO existe en:", imagenSaludo);
 }
 
+//Verificar si Railway bloquea archivos locales
+const existeImagen = fs.existsSync(imagenSaludo);
+console.log(`✅ La imagen ${existeImagen ? "SÍ" : "NO"} existe en: ${imagenSaludo}`);
+
+if (existeImagen) {
+    try {
+        const stats = fs.statSync(imagenSaludo);
+        console.log(`📏 Tamaño: ${stats.size} bytes`);
+    } catch (err) {
+        console.error("❌ Error obteniendo info de la imagen:", err);
+    }
+}
+
 const despedida = "Tu sesión de chat ha finalizado debido a inactividad. Si necesitas más ayuda, no dudes en iniciar un nuevo chat. ¡Estamos aquí para ayudarte!";
 
 // Almacenamiento temporal para rastrear usuarios y tiempos de actividad
