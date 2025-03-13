@@ -16,6 +16,16 @@ const pathSaludo = path.join(__dirname, "mensajes", "saludo.txt");
 const saludo = fs.readFileSync(pathSaludo, "utf8");
 const imagenSaludo = path.join(__dirname, "public/img", "saludo.jpg");
 
+// Verificar si la ruta es correcta
+console.log("Ruta de la imagen de saludo:", imagenSaludo);
+
+// Verificar si el archivo existe
+if (fs.existsSync(imagenSaludo)) {
+    console.log("La imagen de saludo existe.");
+} else {
+    console.log("La imagen de saludo NO existe.");
+}
+
 const despedida = "Tu sesión de chat ha finalizado debido a inactividad. Si necesitas más ayuda, no dudes en iniciar un nuevo chat. ¡Estamos aquí para ayudarte!";
 
 // Almacenamiento temporal para rastrear usuarios y tiempos de actividad
