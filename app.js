@@ -79,7 +79,9 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         if (!usersWhoReceivedWelcome.has(userId)) {
             usersWhoReceivedWelcome.add(userId);
             console.log("📷 Enviando imagen desde:", imagenSaludo);
-            await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
+            await ctxFn
+            .flowDynamic(saludo, { media: imagenSaludo });
+            .catch((error) => console.error("❌ Error enviando la imagen:", error));
         }
 
         const consulta = ctx.body.trim();
