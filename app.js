@@ -22,7 +22,7 @@ const promptConsultas = fs.readFileSync(pathConsultas, "utf8");
 
 const pathSaludo = path.join(__dirname, "mensajes", "saludo.txt");
 const saludo = fs.readFileSync(pathSaludo, "utf8");
-const imagenSaludo = "https://res.cloudinary.com/drkiaah01/image/upload/v1741850033/saludo_kgkv9m.jpg"
+const imagenSaludo = "https://res.cloudinary.com/drkiaah01/image/upload/v1741850033/saludo.jpg"
 
 const despedida = "Tu sesión de chat ha finalizado debido a inactividad. Si necesitas más ayuda, no dudes en iniciar un nuevo chat. ¡Estamos aquí para ayudarte!";
 
