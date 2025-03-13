@@ -1,1 +1,0 @@
-mkdir -p public/img && touch public/img/.gitkeep

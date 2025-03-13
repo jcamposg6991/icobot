@@ -27,7 +27,7 @@ Cursos:
         Horario: martes de 6:30pm a 8:30pm
         Categoría: Curso Libre
         Material: incluido
-        Imagen: Office_Basico.jpg
+        Imagen: v1741851061/Office_Basico.jpg
 
     Inglés para niños:
         Duración: 4 meses
