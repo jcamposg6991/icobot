@@ -8,6 +8,8 @@ const MongoAdapter = require('@bot-whatsapp/database/mongo');
 const path = require("path");
 const fs = require("fs");
 const chat = require("./chatGPT");
+
+// Base de la URL de Cloudinary
 const cloudinaryBaseUrl = 'https://res.cloudinary.com/drkiaah01/image/upload/';
 
 // Configurar Cloudinary con las credenciales del .env
@@ -23,7 +25,7 @@ const promptConsultas = fs.readFileSync(pathConsultas, "utf8");
 
 const pathSaludo = path.join(__dirname, "mensajes", "saludo.txt");
 const saludo = fs.readFileSync(pathSaludo, "utf8");
-const imagenSaludo = "https://res.cloudinary.com/drkiaah01/image/upload/v1741850033/saludo.jpg"
+const imagenSaludo = "https://res.cloudinary.com/drkiaah01/image/upload/v1741850033/saludo.jpg";
 
 const despedida = "Tu sesión de chat ha finalizado debido a inactividad. Si necesitas más ayuda, no dudes en iniciar un nuevo chat. ¡Estamos aquí para ayudarte!";
 
@@ -64,7 +66,7 @@ const obtenerImagenCurso = (respuestaTexto) => {
         
         return urlImagenCloudinary;
     }
-    return null;
+    return null; // Devuelve null si no encuentra una referencia a la imagen
 };
 
 // Flujo dinámico para manejar consultas generales
@@ -83,7 +85,7 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         const rutaImagen = obtenerImagenCurso(answer.content);
 
         if (rutaImagen) {
-            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: urlImagenCloudinary });
+            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
         } else {
             await ctxFn.flowDynamic(answer.content);
         }
