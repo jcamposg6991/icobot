@@ -38,7 +38,7 @@ Cursos:
         Horario: sabados de 10:00am a 12:00md
         Categoría: Curso Libre
         Material: incluido
-        Imagen: Ingles_ninos.jpg
+        Imagen: v1741879531/Ingles_ninos.jpg
        
     Técnico en Contabilidad:
         Duración: 6 meses
@@ -49,7 +49,7 @@ Cursos:
         Horario: jueves de 6:30pm a 8:20pm
         Categoría: Carrera Técnica
         Material: incluido
-        Imagen: Tec_Contabilidad.jpeg
+        Imagen: v1741879682/Tec_Contabilidad.jpg
         
     Técnico en Recursos Humanos:
         Duración: 6 meses
@@ -60,7 +60,7 @@ Cursos:
         Horario: jueves de 6:30pm a 8:30pm
         Categoría: Carrera Técnica
         Material: incluido
-        Imagen: Tec_RH.jpeg
+        Imagen: v1741879752/Tec_RH.jpg
       
     Técnico en Secretariado Ejecutivo:
 	    Duración: 6 meses
@@ -71,7 +71,7 @@ Cursos:
         Horario: jueves de 6:30pm a 8:20pm
         Categoría: Carrera Técnica
         Material: incluido
-        Imagen: Técnico_en_Secretariado_Ejecutivo.jpeg
+        Imagen: v1741879898/Tec_Secretariado_Ejecutivo.jpg
 
     Técnico en Administración:
 	    Duración: 6 meses
@@ -82,7 +82,7 @@ Cursos:
         Horario: jueves de 6:30pm a 8:20pm
         Categoría: Carrera Técnica
         Material: incluido
-        Imagen: Técnico_en_Administración.jpeg
+        Imagen: v1741880030/Tec_Administracion.jpg
       
     Técnico en Inglés:
 	    Duración: 1 año
@@ -93,7 +93,7 @@ Cursos:
         Horario: jueves de 6:30pm a 8:20pm
         Categoría: Carrera Técnica
         Material: incluido
-        Imagen: Técnico_en_Inglés.jpeg
+        Imagen: v1741880116/Tec_Ingles.jpg
       
     Técnico en Portugués:
 	    Duración: 9 meses
@@ -104,7 +104,7 @@ Cursos:
         Horario: lunes de 6:30pm a 8:20pm
         Categoría: Carrera Técnica
         Material: incluido
-        Imagen: Técnico_en_Portugués.jpeg
+        Imagen: v1741880256/Tec_Portugues.jpg
       
     Técnico en Control de Calidad:
 	    Duración: 8 meses
@@ -115,7 +115,7 @@ Cursos:
         Horario: viernes de 6:30pm a 8:20pm
         Categoría: Carrera Técnica
         Material: incluido
-        Imagen: Técnico_en_Control_de_Calidad.jpeg
+        Imagen: v1741880369/Tec_Control_Calidad.jpg
 
     Técnico en Preescolar:
 	    Duración: 8 meses
@@ -126,7 +126,7 @@ Cursos:
         Horario: jueves de 6:30pm a 8:20pm
         Categoría: Carrera Técnica
         Material: incluido
-        Imagen: Técnico_en_Preescolar.jpeg
+        Imagen: v1741880529/Tec_Preescolar.jpg
 
     Técnico en Asistente de Pacientes:
         Imagen:Técnico_en_Asistentede_de_Pacientes.jpeg
@@ -138,8 +138,7 @@ Cursos:
         Horario: sabados de 3:00pm a 5:00pm
         Categoría: Carrera Técnica
         Material: incluido
-        Imagen: Técnico_en_Asistentede_de_Pacientes.jpeg
-
+        Imagen: v1741880876/Tec_Asistente_Pacientes.jpg
 
 
 
