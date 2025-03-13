@@ -14,7 +14,7 @@ const promptConsultas = fs.readFileSync(pathConsultas, "utf8");
 
 const pathSaludo = path.join(__dirname, "mensajes", "saludo.txt");
 const saludo = fs.readFileSync(pathSaludo, "utf8");
-const imagenSaludo = path.join(__dirname, "public/img", "saludo.jpg");
+const imagenSaludo = path.join(__dirname, "/app/public/img/", "saludo.jpg");
 
 // Crear el directorio si no existe
 const dirImagenes = path.dirname(imagenSaludo);
