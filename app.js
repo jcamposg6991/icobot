@@ -8,6 +8,7 @@ const MongoAdapter = require('@bot-whatsapp/database/mongo');
 const path = require("path");
 const fs = require("fs");
 const chat = require("./chatGPT");
+const cloudinaryBaseUrl = 'https://res.cloudinary.com/drkiaah01/image/upload/';
 
 // Configurar Cloudinary con las credenciales del .env
 cloudinary.config({
@@ -52,25 +53,18 @@ const checkInactiveUsers = async () => {
 };
 setInterval(checkInactiveUsers, 60 * 1000);
 
-// Función para verificar si la respuesta contiene una referencia a una imagen en Cloudinary
+// Función para verificar si la respuesta contiene una referencia a una imagen y generar la URL de Cloudinary
 const obtenerImagenCurso = (respuestaTexto) => {
     const matchImagen = respuestaTexto.match(/Imagen:\s*(.*)/);
     if (matchImagen) {
         const nombreImagen = matchImagen[1].trim();
         
-        // Consulta a Cloudinary si la imagen existe
-        cloudinary.api.resources_by_tag(nombreImagen, (error, result) => {
-            if (error) {
-                console.error('Error al consultar Cloudinary:', error);
-                return null;
-            }
-            if (result.resources && result.resources.length > 0) {
-                // Si la imagen se encuentra en Cloudinary, devuelve la URL
-                return result.resources[0].secure_url;
-            }
-        });
+        // Concatenar la base de la URL de Cloudinary con el nombre de la imagen
+        const urlImagenCloudinary = `${cloudinaryBaseUrl}${nombreImagen}`;
+        
+        return urlImagenCloudinary;
     }
-    return null; // Si no se encuentra ninguna imagen
+    return null;
 };
 
 // Flujo dinámico para manejar consultas generales
@@ -89,7 +83,7 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         const rutaImagen = obtenerImagenCurso(answer.content);
 
         if (rutaImagen) {
-            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
+            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: urlImagenCloudinary });
         } else {
             await ctxFn.flowDynamic(answer.content);
         }
