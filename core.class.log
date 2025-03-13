@@ -2,26 +2,26 @@
   key: {
     remoteJid: '50672718761@s.whatsapp.net',
     fromMe: false,
-    id: '3EB090B117AB5695585869',
+    id: '3AA8907E0750D4642A7E',
     participant: undefined
   },
-  messageTimestamp: 1741829289,
+  messageTimestamp: 1741840292,
   pushName: 'Jor69',
   broadcast: false,
   message: Message {
-    conversation: 'HOLA',
+    conversation: 'Hola',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'HOLA',
+  body: 'Hola',
   from: '50672718761'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2466f33c-1c53-495f-b1ab-cebb6546a9f1',
-  keyword: 'key_d50d25e0-32cc-476a-ac98-c6bbd6600a65',
+  ref: 'ans_ca1b08dd-9b98-4bd0-a846-ce7371768cf2',
+  keyword: 'key_ff0bbab1-3dab-48b5-a8f4-aa679b5de1ce',
   answer: '*🤖IcoBot🤖*',
   options: {
     media: null,
@@ -35,32 +35,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '509052188ec14ef544bdc6f10738ea42'
+  refSerialize: 'bb9de6b13899258f4775312503fb7674'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '50672718761@s.whatsapp.net',
     fromMe: false,
-    id: '3EB0CBC27A35CCA02B4740',
+    id: '3A0BC4357A97484C76A8',
     participant: undefined
   },
-  messageTimestamp: 1741829296,
+  messageTimestamp: 1741840306,
   pushName: 'Jor69',
   broadcast: false,
   message: Message {
-    conversation: 'Me gustaría info de contabilidad',
+    conversation: 'Quiero información de cursos',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Me gustaría info de contabilidad',
+  body: 'Quiero información de cursos',
   from: '50672718761'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2466f33c-1c53-495f-b1ab-cebb6546a9f1',
-  keyword: 'key_d50d25e0-32cc-476a-ac98-c6bbd6600a65',
+  ref: 'ans_ca1b08dd-9b98-4bd0-a846-ce7371768cf2',
+  keyword: 'key_ff0bbab1-3dab-48b5-a8f4-aa679b5de1ce',
   answer: '*🤖IcoBot🤖*',
   options: {
     media: null,
@@ -74,32 +74,32 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '509052188ec14ef544bdc6f10738ea42'
+  refSerialize: 'bb9de6b13899258f4775312503fb7674'
 }
 [handleMsg]:  {
   key: {
     remoteJid: '50672718761@s.whatsapp.net',
     fromMe: false,
-    id: '3EB00C1B7C2BB9D10EB690',
+    id: '3A2D0EFBD24D5AC39A6D',
     participant: undefined
   },
-  messageTimestamp: 1741829310,
+  messageTimestamp: 1741840315,
   pushName: 'Jor69',
   broadcast: false,
   message: Message {
-    conversation: 'Me gustaría info de PORTU',
+    conversation: 'Administración',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Me gustaría info de PORTU',
+  body: 'Administración',
   from: '50672718761'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2466f33c-1c53-495f-b1ab-cebb6546a9f1',
-  keyword: 'key_d50d25e0-32cc-476a-ac98-c6bbd6600a65',
+  ref: 'ans_ca1b08dd-9b98-4bd0-a846-ce7371768cf2',
+  keyword: 'key_ff0bbab1-3dab-48b5-a8f4-aa679b5de1ce',
   answer: '*🤖IcoBot🤖*',
   options: {
     media: null,
@@ -113,5 +113,44 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '509052188ec14ef544bdc6f10738ea42'
+  refSerialize: 'bb9de6b13899258f4775312503fb7674'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '50672718761@s.whatsapp.net',
+    fromMe: false,
+    id: '3AD0944BA5894907A0EF',
+    participant: undefined
+  },
+  messageTimestamp: 1741840331,
+  pushName: 'Jor69',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si tecnico en administración',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si tecnico en administración',
+  from: '50672718761'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_ca1b08dd-9b98-4bd0-a846-ce7371768cf2',
+  keyword: 'key_ff0bbab1-3dab-48b5-a8f4-aa679b5de1ce',
+  answer: '*🤖IcoBot🤖*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 1,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'bb9de6b13899258f4775312503fb7674'
 }

@@ -3,7 +3,6 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm i
 COPY . .
-COPY public/img/saludo.jpg /app/public/img
 ARG RAILWAY_STATIC_URL
 ARG PUBLIC_URL
 ARG PORT
