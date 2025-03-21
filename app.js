@@ -36,7 +36,7 @@ const userActivity = new Map();
 const checkInactiveUsers = async () => {
     const now = Date.now();
     for (const [userId, lastActive] of userActivity.entries()) {
-        if (now - lastActive > 1 * 60 * 1000) {
+        if (now - lastActive > 24 * 60 * 60 * 1000) {
             console.log(`Enviando mensaje de despedida a ${userId}`);
 
             if (global.provider) {
