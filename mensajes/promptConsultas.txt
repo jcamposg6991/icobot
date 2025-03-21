@@ -46,7 +46,7 @@ Cursos:
         Costo de matricula: ₡8,000.00
         Costo de mensualidad: ₡12,000.00
         Requerimientos Previos: no requiere conocimientos previos, solo cuaderno, lápiz o lapicero.
-        Horario: jueves de 6:30pm a 8:20pm
+        Horario: viernes de 6:30pm a 8:20pm
         Categoría: Carrera Técnica
         Material: incluido
         Imagen: v1741879682/Tec_Contabilidad.jpg
@@ -68,7 +68,7 @@ Cursos:
         Costo de matricula: ₡8,000.00
         Costo de mensualidad: ₡12,000.00
         Requerimientos Previos: no requiere conocimientos previos, solo cuaderno, lápiz o lapicero.
-        Horario: jueves de 6:30pm a 8:20pm
+        Horario: viernes de 6:30pm a 8:20pm
         Categoría: Carrera Técnica
         Material: incluido
         Imagen: v1741879898/Tec_Secretariado_Ejecutivo.jpg
@@ -79,7 +79,7 @@ Cursos:
         Costo de matricula: ₡8,000.00
         Costo de mensualidad: ₡12,000.00
         Requerimientos Previos: no requiere conocimientos previos, solo cuaderno, lápiz o lapicero.
-        Horario: jueves de 6:30pm a 8:20pm
+        Horario: viernes de 6:30pm a 8:20pm
         Categoría: Carrera Técnica
         Material: incluido
         Imagen: v1741880030/Tec_Administracion.jpg
@@ -90,7 +90,7 @@ Cursos:
         Costo de matricula: ₡8,000.00
         Costo de mensualidad: ₡12,000.00
         Requerimientos Previos: no requiere conocimientos previos, solo cuaderno, lápiz o lapicero.
-        Horario: jueves de 6:30pm a 8:20pm
+        Horario: martes de 6:30pm a 8:20pm / sabados de 10:00am a 12:00pm
         Categoría: Carrera Técnica
         Material: incluido
         Imagen: v1741880116/Tec_Ingles.jpg
