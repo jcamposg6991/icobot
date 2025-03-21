@@ -50,6 +50,17 @@ Cursos:
         Categoría: Carrera Técnica
         Material: incluido
         Imagen: v1741879682/Tec_Contabilidad.jpg
+
+    Técnico en Banca y Finanzas:
+        Duración: 6 meses
+        Modalidad: virtual / presencial
+        Costo de matricula: ₡8,000.00
+        Costo de mensualidad: ₡12,000.00
+        Requerimientos Previos: no requiere conocimientos previos, solo cuaderno, lápiz o lapicero.
+        Horario: viernes de 6:30pm a 8:20pm
+        Categoría: Carrera Técnica
+        Material: incluido
+        Imagen: v1742520300/Tec_Banca_Finanzas.jpg
         
     Técnico en Recursos Humanos:
         Duración: 6 meses
