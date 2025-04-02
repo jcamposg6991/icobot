@@ -96,7 +96,7 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         console.log("Imágenes encontradas:", imagenes);
 
         // Mensaje de texto sin referencias a imágenes
-        let mensaje = answer.content.replace(/Imagen1\d:\s*\S+/g, "").trim();
+        let mensaje = answer.content.replace(/Imagen\d:\s*\S+/g, "").trim();
         await ctxFn.flowDynamic(mensaje);
 
         // Enviar las imágenes una por una si existen
