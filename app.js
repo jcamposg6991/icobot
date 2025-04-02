@@ -62,11 +62,11 @@ const obtenerImagenesCurso = (respuestaTexto) => {
     // Usamos una expresión regular para buscar "Imagen1", "Imagen2", ..., "Imagen6"
     for (let i = 1; i <= 6; i++) {
         const matchImagen = respuestaTexto.match(`Imagen${i}:\s*(.*)`);
-        console.log(matchImagen);
+        console.log("imagen que hizo match",matchImagen);
         if (matchImagen) {
             const nombreImagen = matchImagen[1].trim();
             const urlImagenCloudinary = `${cloudinaryBaseUrl}${nombreImagen}`;
-            console.log(urlImagenCloudinary);
+            console.log("imagen que se le concatena la url base",urlImagenCloudinary);
             imagenes.push(urlImagenCloudinary);
         }
     }
@@ -88,6 +88,7 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
 
         const consulta = ctx.body.trim();
         const answer = await chat(promptConsultas, consulta);
+        console.log("Info que trae el promptConsultas:", answer.content);
         const imagenes = obtenerImagenesCurso(answer.content); // Ahora devuelve un array con todas las imágenes
 
         console.log("Respuesta del bot:", answer);
