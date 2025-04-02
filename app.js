@@ -56,17 +56,15 @@ const checkInactiveUsers = async () => {
 setInterval(checkInactiveUsers, 60 * 1000);
 
 // Función para verificar si la respuesta contiene una referencia a una imagen y generar la URL de Cloudinary
-const obtenerImagenCurso = (respuestaTexto) => {
-    const matchImagen = respuestaTexto.match(/Imagen:\s*(.*)/);
-    if (matchImagen) {
-        const nombreImagen = matchImagen[1].trim();
-        
-        // Concatenar la base de la URL de Cloudinary con el nombre de la imagen
-        const urlImagenCloudinary = `${cloudinaryBaseUrl}${nombreImagen}`;
-        
-        return urlImagenCloudinary;
+const obtenerImagenesCurso = (respuestaTexto) => {
+    const matches = respuestaTexto.match(/Imagen:\s*(.*)/g);
+    if (matches) {
+        return matches.map(match => {
+            const nombreImagen = match.replace("Imagen:", "").trim();
+            return `${cloudinaryBaseUrl}${nombreImagen}`;
+        });
     }
-    return null; // Devuelve null si no encuentra una referencia a la imagen
+    return []; // Devuelve un array vacío si no encuentra imágenes
 };
 
 // Flujo dinámico para manejar consultas generales
@@ -82,12 +80,20 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
 
         const consulta = ctx.body.trim();
         const answer = await chat(promptConsultas, consulta);
-        const rutaImagen = obtenerImagenCurso(answer.content);
+        const imagenes = obtenerImagenesCurso(answer.content);
 
-        if (rutaImagen) {
-            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
+        let mensaje = answer.content.replace(/Imagen:.*$/g, "").trim();
+
+        if (imagenes.length > 0) {
+            // Enviar mensaje sin la referencia de las imágenes
+            await ctxFn.flowDynamic(mensaje);
+
+            // Enviar cada imagen de forma separada
+            for (const imgUrl of imagenes) {
+                await ctxFn.flowDynamic("", { media: imgUrl });
+            }
         } else {
-            await ctxFn.flowDynamic(answer.content);
+            await ctxFn.flowDynamic(mensaje);
         }
     });
 
