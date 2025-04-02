@@ -58,11 +58,10 @@ setInterval(checkInactiveUsers, 60 * 1000);
 // Función mejorada para obtener todas las imágenes de la respuesta
 const obtenerImagenesCurso = (respuestaTexto) => {
     console.log("Texto de respuesta recibido:", respuestaTexto);
-    const matches = respuestaTexto.match(/Imagen\d+:\s*([^
-]+)/g);
+    const matches = respuestaTexto.match(/Imagen\d+:\s*([^\s]+)/g);
     if (matches) {
         const imagenes = matches.map(match => {
-            const nombreImagen = match.replace(/Imagen\d+:/, "").trim();
+            const nombreImagen = match.split(":")[1].trim();
             return `${cloudinaryBaseUrl}${nombreImagen}`;
         });
         console.log("Imágenes detectadas:", imagenes);
