@@ -61,10 +61,12 @@ const obtenerImagenesCurso = (respuestaTexto) => {
     
     // Usamos una expresión regular para buscar "Imagen1", "Imagen2", ..., "Imagen6"
     for (let i = 1; i <= 6; i++) {
-        const matchImagen = respuestaTexto.match(new RegExp(`Imagen${i}:\s*(.*)`));
+        const matchImagen = respuestaTexto.match(`Imagen${i}:\s*(.*)`);
+        console.log(matchImagen);
         if (matchImagen) {
             const nombreImagen = matchImagen[1].trim();
             const urlImagenCloudinary = `${cloudinaryBaseUrl}${nombreImagen}`;
+            console.log(urlImagenCloudinary);
             imagenes.push(urlImagenCloudinary);
         }
     }
