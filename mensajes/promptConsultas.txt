@@ -49,9 +49,9 @@ Cursos:
         Horario: viernes de 6:30pm a 8:20pm
         Categoría: Carrera Técnica
         Material: incluido
-        Imagen1: v1741879682/Tec_Contabilidad.jpg
-        Imagen2: v1741880529/Tec_Contabilidad_precios.jpg
-        Imagen3: v1741879531/Tec_Contabilidad_horarios.jpg
+        Imagen0: v1741879682/Tec_Contabilidad.jpg
+        Imagen1: v1741880529/Tec_Contabilidad_precios.jpg
+        Imagen2: v1741879531/Tec_Contabilidad_horarios.jpg
 
     Técnico en Banca y Finanzas:
         Duración: 6 meses

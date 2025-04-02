@@ -61,15 +61,15 @@ const obtenerImagenesCurso = (respuestaTexto) => {
     const imagenes = [];
     
     // Usamos una expresión regular para buscar "Imagen1", "Imagen2", ..., "Imagen6"
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 0; i <= 5; i++) {
         const matchImagen = respuestaTexto.match(`Imagen${i}:\s*(.*)`);
-        console.log("imagen que hizo match",matchImagen);
+        console.log("imagen que hizo match",matchImagen[i].trim());
         if (matchImagen) {
             const nombreImagen = matchImagen[1].trim();
             const urlImagenCloudinary = `${cloudinaryBaseUrl}${nombreImagen}`;
-            console.log("imagen que se le concatena la url base",urlImagenCloudinary);
             imagenes.push(urlImagenCloudinary);
         }
+        console.log("imagen que se le concatena la url base",urlImagenCloudinary);
     }
 
     console.log("Imágenes encontradas:", imagenes);
