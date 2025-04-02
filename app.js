@@ -56,26 +56,18 @@ const checkInactiveUsers = async () => {
 setInterval(checkInactiveUsers, 60 * 1000);
 
 // Función para verificar si la respuesta contiene una referencia a una imagen y generar la URL de Cloudinary
-const obtenerImagenesCurso = (respuestaTexto) => {
-    console.log("La respuesta que recibe la función obtenerImagenesCurso:", respuestaTexto);
-    const imagenes = [];
-    
-    for (let i = 1; i <= 6; i++) { // Buscando desde Imagen1 hasta Imagen6
-        const regex = new RegExp(`Imagen${i}:\\s*(\\S+)`, "g");
-        const matchImagen = [...respuestaTexto.matchAll(regex)];
+const obtenerImagenCurso = (respuestaTexto) => {
+    const matchImagen = respuestaTexto.match(/Imagen:\s*(.*)/);
+    if (matchImagen) {
+        const nombreImagen = matchImagen[1].trim();
         
-        if (matchImagen.length > 0) {
-            const nombreImagen = matchImagen[0][1].trim();
-            const urlImagenCloudinary = `${cloudinaryBaseUrl}${nombreImagen}`;
-            imagenes.push(urlImagenCloudinary);
-            console.log(`Imagen encontrada: ${nombreImagen} -> URL: ${urlImagenCloudinary}`);
-        }
+        // Concatenar la base de la URL de Cloudinary con el nombre de la imagen
+        const urlImagenCloudinary = `${cloudinaryBaseUrl}${nombreImagen}`;
+        
+        return urlImagenCloudinary;
     }
-
-    console.log("Imágenes encontradas:", imagenes);
-    return imagenes; // Devuelve un array con las URLs de las imágenes encontradas
+    return null; // Devuelve null si no encuentra una referencia a la imagen
 };
-
 
 // Flujo dinámico para manejar consultas generales
 const flowConsultas = addKeyword([EVENTS.MESSAGE])
@@ -90,22 +82,12 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
 
         const consulta = ctx.body.trim();
         const answer = await chat(promptConsultas, consulta);
-        console.log("Info que trae el promptConsultas:", answer.content);
-        const imagenes = obtenerImagenesCurso(answer.content); // Ahora devuelve un array con todas las imágenes
+        const rutaImagen = obtenerImagenCurso(answer.content);
 
-        console.log("Respuesta del bot:", answer);
-        console.log("Imágenes encontradas:", imagenes);
-
-        // Mensaje de texto sin referencias a imágenes
-        let mensaje = answer.content.replace(/Imagen\d:\s*\S+/g, "").trim();
-        await ctxFn.flowDynamic(mensaje);
-
-        // Enviar las imágenes una por una si existen
-        if (imagenes.length > 0) {
-            for (const imgUrl of imagenes) {
-                console.log("Enviando imagen:", imgUrl);
-                await ctxFn.flowDynamic("", { media: imgUrl });
-            }
+        if (rutaImagen) {
+            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
+        } else {
+            await ctxFn.flowDynamic(answer.content);
         }
     });
 
