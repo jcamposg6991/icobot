@@ -9,17 +9,14 @@ const path = require("path");
 const fs = require("fs");
 const chat = require("./chatGPT");
 
-// Base de la URL de Cloudinary
 const cloudinaryBaseUrl = 'https://res.cloudinary.com/drkiaah01/image/upload/';
 
-// Configurar Cloudinary con las credenciales del .env
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-// Cargar textos y prompts desde archivos
 const pathConsultas = path.join(__dirname, "mensajes", "promptConsultas.txt");
 const promptConsultas = fs.readFileSync(pathConsultas, "utf8");
 
@@ -29,7 +26,6 @@ const imagenSaludo = "https://res.cloudinary.com/drkiaah01/image/upload/v1741850
 
 const despedida = "Tu sesión de chat ha finalizado debido a inactividad. Si necesitas más ayuda, no dudes en iniciar un nuevo chat. ¡Estamos aquí para ayudarte!";
 
-// Almacenamiento temporal para rastrear usuarios y tiempos de actividad
 const usersWhoReceivedWelcome = new Set();
 const userActivity = new Map();
 
@@ -55,41 +51,47 @@ const checkInactiveUsers = async () => {
 };
 setInterval(checkInactiveUsers, 60 * 1000);
 
-// Función para verificar si la respuesta contiene una referencia a una imagen y generar la URL de Cloudinary
 const obtenerImagenesCurso = (respuestaTexto) => {
+    console.log("Texto de respuesta recibido:", respuestaTexto);
     const matches = respuestaTexto.match(/Imagen:\s*(.*)/g);
     if (matches) {
-        return matches.map(match => {
+        const imagenes = matches.map(match => {
             const nombreImagen = match.replace("Imagen:", "").trim();
             return `${cloudinaryBaseUrl}${nombreImagen}`;
         });
+        console.log("Imágenes extraídas:", imagenes);
+        return imagenes;
     }
-    return []; // Devuelve un array vacío si no encuentra imágenes
+    console.log("No se encontraron imágenes en la respuesta.");
+    return [];
 };
 
-// Flujo dinámico para manejar consultas generales
 const flowConsultas = addKeyword([EVENTS.MESSAGE])
     .addAnswer("*🤖IcoBot🤖*", { delay: 1 }, async (ctx, ctxFn) => {
         const userId = ctx.from;
+        console.log("Usuario activo:", userId);
         userActivity.set(userId, Date.now());
 
         if (!usersWhoReceivedWelcome.has(userId)) {
             usersWhoReceivedWelcome.add(userId);
+            console.log("Enviando mensaje de saludo a:", userId);
             await ctxFn.flowDynamic(saludo, { media: imagenSaludo });
         }
 
         const consulta = ctx.body.trim();
-        const answer = await chat(promptConsultas, consulta);
-        const imagenes = obtenerImagenesCurso(answer.content);
+        console.log("Consulta recibida:", consulta);
 
+        const answer = await chat(promptConsultas, consulta);
+        console.log("Respuesta del chatGPT:", answer.content);
+
+        const imagenes = obtenerImagenesCurso(answer.content);
         let mensaje = answer.content.replace(/Imagen:.*$/g, "").trim();
+        console.log("Mensaje sin referencias a imágenes:", mensaje);
 
         if (imagenes.length > 0) {
-            // Enviar mensaje sin la referencia de las imágenes
             await ctxFn.flowDynamic(mensaje);
-
-            // Enviar cada imagen de forma separada
             for (const imgUrl of imagenes) {
+                console.log("Enviando imagen:", imgUrl);
                 await ctxFn.flowDynamic("", { media: imgUrl });
             }
         } else {
@@ -97,7 +99,6 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         }
     });
 
-// Configuración principal del bot
 const main = async () => {
     const adapterDB = new MongoAdapter({
         dbUri: process.env.MONGO_DB_URI,
