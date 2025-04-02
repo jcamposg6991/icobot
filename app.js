@@ -59,21 +59,23 @@ setInterval(checkInactiveUsers, 60 * 1000);
 const obtenerImagenesCurso = (respuestaTexto) => {
     console.log("La respuesta que recibe la función obtenerImagenesCurso:", respuestaTexto);
     const imagenes = [];
-
-    // Usamos una expresión regular para buscar "Imagen1", "Imagen2", ..., "Imagen6"
-    for (let i = 1; i <= 6; i++) {
-        const regex = new RegExp(`Imagen${i}:\s*(\S+)`, 'g');
-        const matchImagen = regex.exec(respuestaTexto);
+    
+    for (let i = 1; i <= 6; i++) { // Buscando desde Imagen1 hasta Imagen6
+        const regex = new RegExp(`Imagen${i}:\\s*(\\S+)`, "g");
+        const matchImagen = [...respuestaTexto.matchAll(regex)];
         
-        if (matchImagen) {
-            const nombreImagen = matchImagen[1].trim();
+        if (matchImagen.length > 0) {
+            const nombreImagen = matchImagen[0][1].trim();
             const urlImagenCloudinary = `${cloudinaryBaseUrl}${nombreImagen}`;
             imagenes.push(urlImagenCloudinary);
+            console.log(`Imagen encontrada: ${nombreImagen} -> URL: ${urlImagenCloudinary}`);
         }
     }
+
     console.log("Imágenes encontradas:", imagenes);
     return imagenes; // Devuelve un array con las URLs de las imágenes encontradas
 };
+
 
 // Flujo dinámico para manejar consultas generales
 const flowConsultas = addKeyword([EVENTS.MESSAGE])
