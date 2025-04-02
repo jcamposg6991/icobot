@@ -57,7 +57,8 @@ setInterval(checkInactiveUsers, 60 * 1000);
 
 // Función para verificar si la respuesta contiene una referencia a una imagen y generar la URL de Cloudinary
 const obtenerImagenesCurso = (respuestaTexto) => {
-    const matches = [...respuestaTexto.matchAll(/Imagen:\s*(.*)/g)];
+    // Usamos matchAll para capturar todas las coincidencias de "Imagen: <nombre_de_imagen>"
+    const matches = [...respuestaTexto.matchAll(/Imagen:\s*(\S+)/g)];
     if (matches.length > 0) {
         const imagenes = matches.map(match => `${cloudinaryBaseUrl}${match[1].trim()}`);
         console.log("Imágenes extraídas:", imagenes);
@@ -79,13 +80,13 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
 
         const consulta = ctx.body.trim();
         const answer = await chat(promptConsultas, consulta);
-        const imagenes = obtenerImagenesCurso(answer.content); // Ahora devuelve un array
+        const imagenes = obtenerImagenesCurso(answer.content); // Ahora devuelve un array con todas las imágenes
 
         console.log("Respuesta del bot:", answer);
         console.log("Imágenes encontradas:", imagenes);
 
         // Mensaje de texto sin referencias a imágenes
-        let mensaje = answer.content.replace(/Imagen:\s*.*$/gm, "").trim();
+        let mensaje = answer.content.replace(/Imagen:\s*\S+/g, "").trim();
         await ctxFn.flowDynamic(mensaje);
 
         // Enviar cada imagen de forma independiente
@@ -96,6 +97,7 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
             }
         }
     });
+
 
 
 // Configuración principal del bot
