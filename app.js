@@ -57,21 +57,20 @@ setInterval(checkInactiveUsers, 60 * 1000);
 
 // Función para verificar si la respuesta contiene una referencia a una imagen y generar la URL de Cloudinary
 const obtenerImagenesCurso = (respuestaTexto) => {
-    console.log("la respuesta que recibe la funcion obtenerImagenesCurso",respuestaTexto);
+    console.log("La respuesta que recibe la función obtenerImagenesCurso:", respuestaTexto);
     const imagenes = [];
-    
+
     // Usamos una expresión regular para buscar "Imagen1", "Imagen2", ..., "Imagen6"
-    for (let i = 0; i <= 5; i++) {
-        const matchImagen = respuestaTexto.match(`Imagen${i}:\s*(.*)`);
-        console.log("imagen que hizo match",matchImagen[i].trim());
+    for (let i = 1; i <= 6; i++) {
+        const regex = new RegExp(`Imagen${i}:\s*(\S+)`, 'g');
+        const matchImagen = regex.exec(respuestaTexto);
+        
         if (matchImagen) {
             const nombreImagen = matchImagen[1].trim();
             const urlImagenCloudinary = `${cloudinaryBaseUrl}${nombreImagen}`;
             imagenes.push(urlImagenCloudinary);
         }
-        console.log("imagen que se le concatena la url base",urlImagenCloudinary);
     }
-
     console.log("Imágenes encontradas:", imagenes);
     return imagenes; // Devuelve un array con las URLs de las imágenes encontradas
 };
