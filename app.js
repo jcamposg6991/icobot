@@ -57,14 +57,20 @@ setInterval(checkInactiveUsers, 60 * 1000);
 
 // Función para verificar si la respuesta contiene una referencia a una imagen y generar la URL de Cloudinary
 const obtenerImagenesCurso = (respuestaTexto) => {
-    // Usamos matchAll para capturar todas las coincidencias de "Imagen: <nombre_de_imagen>"
-    const matches = [...respuestaTexto.matchAll(/Imagen:\s*(\S+)/g)];
-    if (matches.length > 0) {
-        const imagenes = matches.map(match => `${cloudinaryBaseUrl}${match[1].trim()}`);
-        console.log("Imágenes extraídas:", imagenes);
-        return imagenes; // Devuelve un array con todas las imágenes
+    const imagenes = [];
+    
+    // Usamos una expresión regular para buscar "Imagen1", "Imagen2", ..., "Imagen6"
+    for (let i = 1; i <= 6; i++) {
+        const matchImagen = respuestaTexto.match(new RegExp(`Imagen${i}:\s*(.*)`));
+        if (matchImagen) {
+            const nombreImagen = matchImagen[1].trim();
+            const urlImagenCloudinary = `${cloudinaryBaseUrl}${nombreImagen}`;
+            imagenes.push(urlImagenCloudinary);
+        }
     }
-    return []; // Devuelve un array vacío si no encuentra imágenes
+
+    console.log("Imágenes encontradas:", imagenes);
+    return imagenes; // Devuelve un array con las URLs de las imágenes encontradas
 };
 
 // Flujo dinámico para manejar consultas generales
@@ -86,10 +92,10 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         console.log("Imágenes encontradas:", imagenes);
 
         // Mensaje de texto sin referencias a imágenes
-        let mensaje = answer.content.replace(/Imagen:\s*\S+/g, "").trim();
+        let mensaje = answer.content.replace(/Imagen\d:\s*\S+/g, "").trim();
         await ctxFn.flowDynamic(mensaje);
 
-        // Enviar cada imagen de forma independiente
+        // Enviar las imágenes una por una si existen
         if (imagenes.length > 0) {
             for (const imgUrl of imagenes) {
                 console.log("Enviando imagen:", imgUrl);
@@ -97,8 +103,6 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
             }
         }
     });
-
-
 
 // Configuración principal del bot
 const main = async () => {
