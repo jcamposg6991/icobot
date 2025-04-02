@@ -57,6 +57,7 @@ setInterval(checkInactiveUsers, 60 * 1000);
 
 // Función para verificar si la respuesta contiene una referencia a una imagen y generar la URL de Cloudinary
 const obtenerImagenesCurso = (respuestaTexto) => {
+    console.log("la respuesta que recibe la funcion obtenerImagenesCurso",respuestaTexto);
     const imagenes = [];
     
     // Usamos una expresión regular para buscar "Imagen1", "Imagen2", ..., "Imagen6"
