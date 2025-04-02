@@ -56,19 +56,22 @@ const checkInactiveUsers = async () => {
 setInterval(checkInactiveUsers, 60 * 1000);
 
 // Función mejorada para obtener todas las imágenes de la respuesta
+// Función mejorada para obtener todas las imágenes de la respuesta
 const obtenerImagenesCurso = (respuestaTexto) => {
     console.log("Texto de respuesta recibido:", respuestaTexto);
-    const matches = respuestaTexto.match(/Imagen:\s*([^\s]+)/g);
-    if (matches) {
+    const matches = [...respuestaTexto.matchAll(/Imagen:\s*([^\s]+)/g)];
+    
+    if (matches.length > 0) {
         const imagenes = matches.map(match => {
-            const nombreImagen = match.replace("Imagen:", "").trim();
+            const nombreImagen = match[1].trim();
             return `${cloudinaryBaseUrl}${nombreImagen}`;
         });
         console.log("Imágenes detectadas:", imagenes);
         return imagenes;
     }
+    
     console.log("No se encontraron imágenes en la respuesta.");
-    return []; // Devuelve un array vacío si no encuentra imágenes
+    return [];
 };
 
 // Flujo dinámico para manejar consultas generales
@@ -90,7 +93,9 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
         console.log("Respuesta del chatGPT:", answer.content);
 
         const imagenes = obtenerImagenesCurso(answer.content);
-        let mensaje = answer.content.replace(/Imagen:.*$/g, "").trim();
+        
+        // Removiendo todas las líneas que contienen "Imagen:"
+        let mensaje = answer.content.replace(/^\s*Imagen:.*$/gm, "").trim();
 
         console.log("Mensaje sin referencias a imágenes:", mensaje);
         await ctxFn.flowDynamic(mensaje);
@@ -102,6 +107,7 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
             }
         }
     });
+
 
 // Configuración principal del bot
 const main = async () => {
