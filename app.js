@@ -56,19 +56,14 @@ const checkInactiveUsers = async () => {
 setInterval(checkInactiveUsers, 60 * 1000);
 
 // Función para verificar si la respuesta contiene una referencia a una imagen y generar la URL de Cloudinary
-const obtenerImagenCurso = (respuestaTexto) => {
-    const matchImagen = respuestaTexto.match(/Imagen:\s*(.*)/);
-    if (matchImagen) {
-        const nombreImagen = matchImagen[1].trim();
-        
-        // Concatenar la base de la URL de Cloudinary con el nombre de la imagen
-        const urlImagenCloudinary = `${cloudinaryBaseUrl}${nombreImagen}`;
-
-        console.log("Imágen extraída:", urlImagenCloudinary);
-        
-        return urlImagenCloudinary;
+const obtenerImagenesCurso = (respuestaTexto) => {
+    const matches = [...respuestaTexto.matchAll(/Imagen:\s*(.*)/g)];
+    if (matches.length > 0) {
+        const imagenes = matches.map(match => `${cloudinaryBaseUrl}${match[1].trim()}`);
+        console.log("Imágenes extraídas:", imagenes);
+        return imagenes; // Devuelve un array con todas las imágenes
     }
-    return null; // Devuelve null si no encuentra una referencia a la imagen
+    return []; // Devuelve un array vacío si no encuentra imágenes
 };
 
 // Flujo dinámico para manejar consultas generales
@@ -84,17 +79,24 @@ const flowConsultas = addKeyword([EVENTS.MESSAGE])
 
         const consulta = ctx.body.trim();
         const answer = await chat(promptConsultas, consulta);
-        const rutaImagen = obtenerImagenCurso(answer.content);
+        const imagenes = obtenerImagenesCurso(answer.content); // Ahora devuelve un array
 
         console.log("Respuesta del bot:", answer);
-        console.log("Imágenes encontradas:", rutaImagen);
+        console.log("Imágenes encontradas:", imagenes);
 
-        if (rutaImagen) {
-            await ctxFn.flowDynamic(answer.content.replace(/Imagen:.*$/, "").trim(), { media: rutaImagen });
-        } else {
-            await ctxFn.flowDynamic(answer.content);
+        // Mensaje de texto sin referencias a imágenes
+        let mensaje = answer.content.replace(/Imagen:\s*.*$/gm, "").trim();
+        await ctxFn.flowDynamic(mensaje);
+
+        // Enviar cada imagen de forma independiente
+        if (imagenes.length > 0) {
+            for (const imgUrl of imagenes) {
+                console.log("Enviando imagen:", imgUrl);
+                await ctxFn.flowDynamic("", { media: imgUrl });
+            }
         }
     });
+
 
 // Configuración principal del bot
 const main = async () => {
