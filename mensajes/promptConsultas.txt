@@ -50,6 +50,8 @@ Cursos:
         Categoría: Carrera Técnica
         Material: incluido
         Imagen: v1741879682/Tec_Contabilidad.jpg
+        Imagen: v1741880529/Tec_Preescolar.jpg
+        Imagen: v1741879531/Ingles_ninos.jpg
 
     Técnico en Banca y Finanzas:
         Duración: 6 meses
