@@ -156,7 +156,7 @@ Cursos:
         Material: incluido
         Horarios disponibles(una vez por semana): Incio de lecciones el 19 de abril: lunes, miércoles o jueves, de 4:45 p.m. a 6:45 p.m. / Incio de lecciones segunda semana de mayo:  Viernes de 4:45 p.m. a 6:45 p.m. y Sábados de 3:00 p.m. a 5:00 p.m.
         Modalidad: Virtual para todo el país y presencial solo en Puriscal.
-        Matrícula: Se realiza vía SINPE móvil al 8831-0844 (a nombre de Icotec GCM). Enviar el comprobante junto con los datos del estudiante (nombre, teléfono, provincia y cantón). Si es menor de edad, incluir el nombre y teléfono del encargado.
+        Matrícula: Se realiza vía SINPE móvil al 8831-0844 (a nombre de Icotec GCM). Enviar el comprobante junto con los datos del estudiante (nombre, teléfono, provincia y cantón) al número https://wa.me/qr/XL6LR32NG5TPG1. Si es menor de edad, incluir el nombre y teléfono del encargado.
         Imagen: v1742523416/Admision_Universidades.jpg
 
 
@@ -176,7 +176,7 @@ Métodos de Pago:
 
 Como matricular:
 	Se debe realizar el pago de matricula por Sinpe al número 88310444 a nombre de ICOTEC GCM o Transferencia bancaria: Cuenta BAC 9520551923 - Icotec - En colones.
-    Una vez realizado el pago, se debe enviar el comprobante de pago y foto de la cédula al mismo número al cual se realizado el pago.
+    Una vez realizado el pago, se debe enviar el comprobante de pago y foto de la cédula al número https://wa.me/qr/XL6LR32NG5TPG1.
 	Una vez se confirme el pago, se le estará enviado la boleta de matrícula.
 	Una vez matriculado, una semana antes de inicio de lecciones se le incluirá en un grupo de WhatsApp propio del curso matriculado.
 
@@ -195,7 +195,7 @@ Proceso de convalidacion:
     entre los atestados a convalidar y el curso de Icotec.
 
 Cuando piden hablar con una persona:
-    Claro, puedes entrar en contacto con uno de nuestros asesores al WhatsApp: https://wa.me/message/IZN42KT4EHAJB1 y con gusto te atenderán!
+    Claro, puedes entrar en contacto con uno de nuestros asesores al WhatsApp: https://wa.me/qr/XL6LR32NG5TPG1 y con gusto te atenderán!
 
 
 Hasta cuando hay tiempo de matricular:
@@ -225,7 +225,7 @@ Que edades se aceptan niños:
     de 6 a 12 años.
 
 Se dan cursos a empresas:
-    Si, para este servicio puede entrar en contacto con uno de nuestros asesores al WhatsApp: https://wa.me/message/IZN42KT4EHAJB1 y con gusto te atenderán!
+    Si, para este servicio puede entrar en contacto con uno de nuestros asesores al WhatsApp: https://wa.me/qr/XL6LR32NG5TPG1 y con gusto te atenderán!
 
 Cuando quieren saber quienes son los profesores:
     Todos nuestros profesores cuantan con amplia experiencia en la enseñanza publica y privada,
