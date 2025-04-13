@@ -151,10 +151,10 @@ Cursos:
         Imagen: v1741880876/Tec_Asistente_Pacientes.jpg
 
     Curso de admisión a las universidades:
-        Descripción: El curso de admisión a las universidades inicia el lunes 24 de marzo y se extiende hasta la segunda semana de octubre, coincidiendo con los exámenes de septiembre y principios de octubre. El programa tiene una duración de 26 semanas, divididas en 13 semanas de clases con el profesor y 13 semanas de práctica. Cada semana se alterna entre clases y prácticas para asegurar una preparación completa antes de los exámenes.
+        Descripción: El curso de admisión a las universidades inicia el lunes 19 de abril y se extiende hasta la segunda semana de octubre, ya que los exámenes inician en septiembre y principios de octubre. El programa tiene una duración de 24 semanas, divididas en 12 semanas de clases con el profesor y 12 semanas de práctica. Cada semana se alterna entre clases y prácticas para asegurar una preparación completa antes de los exámenes.
         Costo: Matrícula - ₡5,000 / Primer pago (inicio del curso) - ₡20,000 / Segundo pago (un mes después) - ₡15,000 Total del curso - ₡40,000
         Material: incluido
-        Horarios disponibles(una vez por semana): Inicio de lecciones la última semana de marzo: lunes, miércoles o jueves, de 4:45 p.m. a 6:45 p.m. / Inicio de lecciones Sábado 19 de abril: de 3:00 p.m. a 5:00 p.m.
+        Horarios disponibles(una vez por semana): Incio de lecciones el 19 de abril: lunes, miércoles o jueves, de 4:45 p.m. a 6:45 p.m. / Incio de lecciones segunda semana de mayo:  Viernes de 4:45 p.m. a 6:45 p.m. y Sábados de 3:00 p.m. a 5:00 p.m.
         Modalidad: Virtual para todo el país y presencial solo en Puriscal.
         Matrícula: Se realiza vía SINPE móvil al 8831-0844 (a nombre de Icotec GCM). Enviar el comprobante junto con los datos del estudiante (nombre, teléfono, provincia y cantón). Si es menor de edad, incluir el nombre y teléfono del encargado.
         Imagen: v1742523416/Admision_Universidades.jpg
