@@ -72,7 +72,7 @@ const obtenerImagenCurso = (respuestaTexto) => {
 
 // Flujo dinámico para manejar consultas generales
 const flowConsultas = addKeyword([EVENTS.MESSAGE])
-    .addAnswer("*🤖IcoBot🤖*", { delay: 1 }, async (ctx, ctxFn) => {
+    .addAnswer("*🤖IcoBot - Respondiendo...🤖*", { delay: 1 }, async (ctx, ctxFn) => {
         const userId = ctx.from;
         userActivity.set(userId, Date.now());
 
